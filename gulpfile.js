@@ -2,6 +2,12 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browsersync = require('browser-sync').create(); // Creates a browser-sync instance
 
+
+// TODO:
+// add minification to css
+// uglify js
+// add modernizr support DONE
+
 // Note this is an example of a higher-order function
 gulp.task('browser-sync', function() {
   browsersync.init({
