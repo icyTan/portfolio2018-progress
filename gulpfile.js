@@ -14,13 +14,13 @@ var jsInput = {
 var jsOutput = 'app/js/dist/'
 
 // TODO:
-// add minification to css TEST
 // uglify js TEST
 // concat all scss
 // eventually pipe a production build
 
 // DONE:
 // add modernizr support DONE
+// add minification to css TEST (????)
 
 gulp.task('browser-sync', function() {
   browsersync.init({
@@ -32,7 +32,7 @@ gulp.task('browser-sync', function() {
 // do sass task
 gulp.task('sass', function() {
   return gulp.src("app/scss/**/*.scss") // return this : set retrival
-    // .pipe(sourcemaps.init()) // init sourcemaps
+    .pipe(sourcemaps.init()) // init sourcemaps
     .pipe(sass({
       errorLogToConsole: true,
       outputStyle: 'compressed' // output as uglifed
@@ -42,7 +42,7 @@ gulp.task('sass', function() {
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    // .pipe(sourcemaps.write('./')) // write sourcemaps
+    .pipe(sourcemaps.write('./')) // write sourcemaps
     .pipe(gulp.dest("app/css")); // set destination
 });
 
