@@ -1,0 +1,3 @@
+.enter-transition-target{-webkit-transition:opacity 0.35s , -webkit-transform 0.5s;transition:opacity 0.35s , -webkit-transform 0.5s;transition:opacity 0.35s , transform 0.5s;transition:opacity 0.35s , transform 0.5s , -webkit-transform 0.5s;opacity:0;-webkit-transform:translateY(-25px);transform:translateY(-25px)}.-loaded{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}.-unloading{opacity:0;-webkit-transform:translate(-25px);transform:translate(-25px)}
+
+/*# sourceMappingURL=animations.css.map */

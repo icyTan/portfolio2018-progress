@@ -1,0 +1,14 @@
+/*transition*/
+.enter-transition-target{
+	transition: opacity 0.35s , transform 0.5s;
+  opacity: 0;
+  transform: translateY(-25px);
+}
+.-loaded{
+  opacity: 1;
+  transform: translateY(0);
+}
+.-unloading{
+	opacity: 0;
+	transform: translate(-25px);
+}

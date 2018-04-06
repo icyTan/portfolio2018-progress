@@ -49,7 +49,7 @@ gulp.task('sass', function() {
 gulp.task('js', function(){
   return gulp.src(jsInput.js)
   .pipe(concat('app.min.js'))
-  .pipe(uglify())
+  // .pipe(uglify()) // TAKE THIS OUT AFTER DEBUG
   .pipe(gulp.dest('app/js/dist'))
 });
 
