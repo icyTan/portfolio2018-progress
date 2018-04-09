@@ -32,7 +32,7 @@ $('a').click(function(e){
 	e.preventDefault();
 	$h = $(this).attr('id');
 	$t = $(this).attr('href');
-	//alert($h);
+	// alert($h);
 	if($h === "contact"){
 		$header.removeClass('-sticky');
 		$("article").addClass('-unloading');

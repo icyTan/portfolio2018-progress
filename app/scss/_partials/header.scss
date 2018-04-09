@@ -1,3 +1,5 @@
+@import "variables";
+
 /*header*/
 .header-bar{
 	transition: height 0.25s, box-shadow 0.25s, background-color 0.125s;
@@ -25,7 +27,7 @@
 }
 
 .header-bar-logo>a{
-	color: #FF5A36;
+	color: $primary-color;
 }
 
 .header-bar-logo{
@@ -52,15 +54,15 @@
     font-weight: 700;
     text-transform: uppercase;
     text-decoration: none;
-    color: #FF5A36;
+    color: $primary-color;
 }
 
 .header-bar-nav-item.-active{
-    color: #0891e1;
+    color: $secondary-color;
 }
 
 .header-bar-nav-item:hover{
-	color: #0891e1;
+	color: $secondary-color;
 }
 
 .header-bar-nav-item>p{
@@ -101,7 +103,7 @@
 	font-weight: 700;
 	text-align: center;
 	line-height: 1.1;
-	color: #FF5A36;
+	color: $primary-color;
 }
 
 .landing-header-subtitle{
@@ -109,7 +111,7 @@
 	font-weight: 400;
 	text-align: center;
 	line-height: 1;
-	color: #FF5A36;
+	color: $primary-color;
 }
 
 .landing-header-about{
@@ -117,5 +119,5 @@
 	margin-right: auto;
 	max-width: 32rem;
 	font-size: 1.4rem;
-	color: #FF5A36;
+	color: $primary-color;
 }
