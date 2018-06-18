@@ -2,6 +2,7 @@
 
 var $header = $("#header");
 var $scrollBottom = $(document).height()-$(window).height();
+var $test = 10;
 
 // functions
 

@@ -8,11 +8,6 @@ var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
 var browsersync = require('browser-sync').create(); // Creates a browser-sync instance
 
-var jsInput = {
-  js: 'app/js/dev/*.js'
-}
-var jsOutput = 'app/js/dist/'
-
 var paths = {
   src:      'app/src/**/*',
   srcHTML:  'app/src/**/*.html',
@@ -20,7 +15,8 @@ var paths = {
   srcMSCSS: 'app/src/scss/main.scss', // only the main scss file (dont need to grab all the scss partials when processing)
   srcJS:    'app/src/**/*.js',
 
-  tmp:      'app/tmp',
+  tmp:      'app/tmp/**/*',
+  tmpDest:  'app/tmp/',
   tmpIndex: 'app/tmp/index.html',
   tmpHTML:  'app/tmp/',
   tmpCSS:   'app/tmp/css',
@@ -57,7 +53,7 @@ gulp.task('browser-sync', function() {
 // html task
 gulp.task('html', function(){
   return gulp.src(paths.srcHTML)
-    .pipe(gulp.dest(paths.tmp));
+    .pipe(gulp.dest(paths.tmpDest));
 });
 
 // do sass task
@@ -87,26 +83,26 @@ gulp.task('js', function(){
 // https://www.browsersync.io/docs/api <--- dont be dumb and follow the new 2.0.0+ API
 // format your gulp watches but then calling on a change to the instance of browsersync PLEASE
 
+// fix async problem properly
+// task should perform processing then send to tmp and then refresh
 gulp.task('watch', ['browser-sync'], function() {
-  gulp.watch(paths.srcSCSS, ['sass']); // watch these items, do this function
+  gulp.watch(paths.srcSCSS, ['scss']);
   gulp.watch(paths.srcJS,['js']);
-  gulp.watch(paths.src,['refresh']);
+  gulp.watch(paths.srcHTML,['html']);
+  gulp.watch(paths.tmp,['refresh']); // hacked method for sequential task run
 });
 
 gulp.task('refresh', function () {
   browsersync.reload();
 });
 
-// base copy function
-gulp.task('copyAll', function(){
-  return gulp.src(paths.src)
-    .pipe(gulp.dest(paths.tmp));
+// html copy function
+gulp.task('html', function(){
+  return gulp.src(paths.srcHTML)
+    .pipe(gulp.dest(paths.tmpHTML));
 });
 
 // copy and set files for temp server
-gulp.task('copy', ['scss','js'], function(){
-  gulp.src(paths.srcHTML)
-    .pipe(gulp.dest(paths.tmpHTML));
-});
+gulp.task('copy',['html','scss','js']);
 
 gulp.task('default', ['watch']);

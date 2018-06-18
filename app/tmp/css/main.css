@@ -122,6 +122,10 @@ body {
   clear: both;
 }
 
+.dummy {
+  display: none;
+}
+
 /*header*/
 .header-bar {
   -webkit-transition: height 0.25s, background-color 0.125s, -webkit-box-shadow 0.25s;
