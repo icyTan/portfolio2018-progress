@@ -1,0 +1,17 @@
+<!DOCTYPE>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="description" content="" />
+  <link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/png" href="/images/xxx.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/xxx.png" sizes="16x16">
+</head>
+<body>
+{% block content %}
+{% endblock %}
+</body>
+</html>

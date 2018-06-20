@@ -1,0 +1,6 @@
+{% set title = 'Patrik Lau | getpatlau' %}
+{% extends "_layout.njx" %}
+
+{% block content %}
+  <h1>Welcome</h1>
+{% endblock %}
