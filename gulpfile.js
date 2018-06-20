@@ -6,6 +6,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
+var nunjucks = require('nunjucks');
 var browsersync = require('browser-sync').create(); // Creates a browser-sync instance
 
 var paths = {
@@ -35,6 +36,8 @@ var paths = {
 // dist - processed and minified files
 
 // TODO:
+// https://medium.com/@andy.neale/nunjucks-a-javascript-template-engine-7731d23eb8cc
+// add templating from nunjucks
 // uglify js TEST
 // concat all scss
 // eventually pipe a production build
@@ -102,7 +105,17 @@ gulp.task('html', function(){
     .pipe(gulp.dest(paths.tmpHTML));
 });
 
+// nunjucks render html function
+gulp.task('render', function(){
+  return gulp.src(paths.srcHTML)
+    .pipe(nunjucks())
+    .pipe(gulp.dest(src.dist));
+});
+
 // copy and set files for temp server
 gulp.task('copy',['html','scss','js']);
+
+// build files and send to dist folder
+gulp.task('build',['refresh']); // TODO
 
 gulp.task('default', ['watch']);
