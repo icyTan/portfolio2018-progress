@@ -83,18 +83,6 @@ gulp.task('js', function(){
   .pipe(gulp.dest(paths.tmpJS))
 });
 
-// https://www.browsersync.io/docs/api <--- dont be dumb and follow the new 2.0.0+ API
-// format your gulp watches but then calling on a change to the instance of browsersync PLEASE
-
-// fix async problem properly
-// task should perform processing then send to tmp and then refresh
-gulp.task('watch', ['browser-sync'], function() {
-  gulp.watch(paths.srcSCSS, ['scss']);
-  gulp.watch(paths.srcJS,['js']);
-  gulp.watch(paths.srcHTML,['html']);
-  gulp.watch(paths.tmp,['refresh']); // hacked method for sequential task run
-});
-
 gulp.task('refresh', function () {
   browsersync.reload();
 });
@@ -111,6 +99,25 @@ gulp.task('render', function(){
     .pipe(nunjucks())
     .pipe(gulp.dest(src.dist));
 });
+
+// gulp watch task for rendering nunjucks pages
+gulp.task('watch-html', ['browser-sync'], function(){
+  gulp.watch(paths.srcHTML,['render', 'refresh']);
+});
+
+// https://www.browsersync.io/docs/api <--- dont be dumb and follow the new 2.0.0+ API
+// format your gulp watches but then calling on a change to the instance of browsersync PLEASE
+
+// fix async problem properly
+// task should perform processing then send to tmp and then refresh
+gulp.task('watch', ['browser-sync'], function() {
+  gulp.watch(paths.srcSCSS, ['scss']);
+  gulp.watch(paths.srcJS,['js']);
+  gulp.watch(paths.srcHTML,['html']);
+  gulp.watch(paths.tmp,['refresh']); // hacked method for sequential task run
+});
+
+
 
 // copy and set files for temp server
 gulp.task('copy',['html','scss','js']);
