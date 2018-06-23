@@ -1,0 +1,16 @@
+<header class="header-bar" id="header">
+  <div class="sizefix centered clearfix">
+    <nav class="left-aligned">
+      <div class="header-bar-logo-container">
+        <div class="header-bar-logo"><a id="home" href="/index.html">PL</a></div>
+      </div>
+    </nav>
+    <nav class="right-aligned">
+      <ul class=header-bar-nav>
+        <li><a id="home" href="/" class="header-bar-nav-item -active"><p>Work</p></a></li>
+        <li><a id="about" href="/about.html" class="header-bar-nav-item"><p>About</p></a></li>
+        <li><a id="contact" class="header-bar-nav-item"><p>Contact</p></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

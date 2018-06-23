@@ -1,0 +1,21 @@
+<section class="landing-work">
+  <div class="sizewide centered">
+    <h2 class="landing-work-title">Work I've done</h2>
+    <div class="display">
+      {% for item in items %}
+      <div class="work-item">
+        <div class="work-item-content">
+          <h3>{{ item.title }}</h3>
+          <p>
+            {{ item.subtitle }}
+          </p>
+        </div>
+      </div>
+      {% else  %}
+      <li>
+        display when broken and not reading items
+      </li>
+      {% endfor %}
+    </div>
+  </div>
+</section>

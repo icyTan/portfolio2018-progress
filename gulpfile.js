@@ -7,6 +7,7 @@ var uglify = require('gulp-uglify');
 var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
 var nunjucks = require('nunjucks');
+var nunjucksRender = require('gulp-nunjucks-render');
 var browsersync = require('browser-sync').create(); // Creates a browser-sync instance
 
 var paths = {
@@ -98,6 +99,17 @@ gulp.task('render', function(){
   return gulp.src(paths.srcHTML)
     .pipe(nunjucks())
     .pipe(gulp.dest(src.dist));
+});
+
+gulp.task('nunjucks',function(){
+  return gulp.src(paths.srcHTML)
+    .pipe(data(function() {
+      return require('./app/data.json') // TODO make into a paths link
+    }))
+    .pipe(nunjucksRender({
+      path: ['app/templates'] // TODO make into a paths link
+    }))
+    .pipe(gulp.dest('app'))
 });
 
 // gulp watch task for rendering nunjucks pages
