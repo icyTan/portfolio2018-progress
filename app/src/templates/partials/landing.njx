@@ -2,7 +2,7 @@
   <div class="sizewide centered">
     <h2 class="landing-work-title">Work I've done</h2>
     <div class="display">
-      {% for item in items %}
+      {% for item in landingitems %}
       <div class="work-item">
         <div class="work-item-content">
           <h3>{{ item.title }}</h3>

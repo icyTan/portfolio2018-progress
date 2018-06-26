@@ -1,0 +1,17 @@
+<footer class="footer enter-transition-target">
+  <div class="sizefix centered">
+    <p class="footer-contact">Get in Contact! <br>
+    <a id="footer-contact" href="mailto:get.patlau@gmail.com" class="footer-contact-btn btn">Mail Me</a></p>
+    <ul class="footer-socialmedia">
+      <li>
+        <a id="footer-twitter" href="https://twitter.com/patrik_lau" target="_blank"><i class="fa fa-twitter fa-2x btn-social-media" aria-hidden="true"></i></a>
+      </li>
+      <li>
+        <a id="footer-facebook" href="https://www.facebook.com/adepthunter" target="_blank"><i class="fa fa-facebook-official fa-2x btn-social-media" aria-hidden="true"></i></a>
+      </li>
+        <a id="footer-linkedin" href="https://ca.linkedin.com/pub/patrik-lau/77/953/b55" target="_blank"><i class="fa fa-linkedin-square fa-2x btn-social-media" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+    <p class="footer-copyright">© Patrik Lau 2018</p>
+  </div>
+</footer>

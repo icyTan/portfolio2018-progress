@@ -1,0 +1,10 @@
+{% extends "_layout.njx" %}
+{% block content %}
+  <h1>for loop test</h1>
+  {% for item in landingitems %}
+    <div>
+      <h2>{{item.title}}</h2>
+      <p>{{item.subtitle}}</p>
+    </div>
+  {% endfor %}
+{% endblock %}

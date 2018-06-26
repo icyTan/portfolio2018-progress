@@ -4,6 +4,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var data = require('gulp-data');
 var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
 var nunjucks = require('nunjucks');
@@ -12,7 +13,7 @@ var browsersync = require('browser-sync').create(); // Creates a browser-sync in
 
 var paths = {
   src:      'app/src/**/*',
-  srcHTML:  'app/src/**/*.html',
+  srcHTML:  'app/src/**/*.+(html|njx)',
   srcSCSS:  'app/src/**/*.scss',
   srcMSCSS: 'app/src/scss/main.scss', // only the main scss file (dont need to grab all the scss partials when processing)
   srcJS:    'app/src/**/*.js',
@@ -102,14 +103,14 @@ gulp.task('render', function(){
 });
 
 gulp.task('nunjucks',function(){
-  return gulp.src(paths.srcHTML)
+  return gulp.src('app/src/templates/*.njx')
     .pipe(data(function() {
-      return require('./app/data.json') // TODO make into a paths link
+      return require('./app/src/data/data.json') // TODO make into a paths link
     }))
     .pipe(nunjucksRender({
-      path: ['app/templates'] // TODO make into a paths link
+      path: ['app/src/templates'] // TODO make into a paths link
     }))
-    .pipe(gulp.dest('app'))
+    .pipe(gulp.dest(paths.tmpHTML))
 });
 
 // gulp watch task for rendering nunjucks pages
@@ -125,7 +126,7 @@ gulp.task('watch-html', ['browser-sync'], function(){
 gulp.task('watch', ['browser-sync'], function() {
   gulp.watch(paths.srcSCSS, ['scss']);
   gulp.watch(paths.srcJS,['js']);
-  gulp.watch(paths.srcHTML,['html']);
+  // gulp.watch(paths.srcHTML,['html']);
   gulp.watch(paths.tmp,['refresh']); // hacked method for sequential task run
 });
 

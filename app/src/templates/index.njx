@@ -3,6 +3,7 @@
 {% extends "_layout.njx" %}
 
 {% block content %}
-  <h1>testing header</h1>
-  {% include "patrials/header.njx" %}
+  {% include "partials/header.njx" %}
+  {% include "partials/landing.njx" %}
+  {% include "partials/footer.njx" %}
 {% endblock %}
