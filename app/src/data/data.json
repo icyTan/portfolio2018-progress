@@ -1,5 +1,6 @@
 {
-  "landingitems": [{
+  "landingitems": [
+    {
       "title":"portfolio - development",
       "subtitle":"description"
     },{
@@ -11,5 +12,15 @@
     },{
       "title":"visier - coop",
       "subtitle":"description"
-    }]
+    }
+  ],
+  "navItems": [
+    {
+      "menu_item":"Work"
+    },{
+      "menu_item": "About"
+    },{
+      "menu_item": "Contact"
+    }
+  ]
 }

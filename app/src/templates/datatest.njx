@@ -1,3 +1,4 @@
+{% set page_title = 'Work' %}
 {% extends "_layout.njx" %}
 {% block content %}
   <h1>for loop test</h1>
@@ -7,4 +8,6 @@
       <p>{{item.subtitle}}</p>
     </div>
   {% endfor %}
+  {% for item in navItems %}
+  <li><a id="{{ item.menu_item | lower}}" href="/{{item.menu_item | lower | replace(" ", "")}}/" class="header-bar-nav-item {% if page_title == item.menu_item %}-active{% endif %}">{{item.menu_item}}</a></li>{% endfor %}
 {% endblock %}
