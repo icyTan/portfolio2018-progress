@@ -16,11 +16,14 @@
   ],
   "navItems": [
     {
-      "menu_item":"Work"
+      "menu_item": "Work",
+      "href" : ""
     },{
-      "menu_item": "About"
+      "menu_item": "About",
+      "href" : "about.html"
     },{
-      "menu_item": "Contact"
+      "menu_item": "Contact",
+      "href" : "contact.html"
     }
   ]
 }

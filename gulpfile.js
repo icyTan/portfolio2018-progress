@@ -12,24 +12,29 @@ var nunjucksRender = require('gulp-nunjucks-render');
 var browsersync = require('browser-sync').create(); // Creates a browser-sync instance
 
 var paths = {
-  src:      'app/src/**/*',
-  srcHTML:  'app/src/**/*.+(html|njx)',
-  srcSCSS:  'app/src/**/*.scss',
-  srcMSCSS: 'app/src/scss/main.scss', // only the main scss file (dont need to grab all the scss partials when processing)
-  srcJS:    'app/src/**/*.js',
+  src:        'app/src/**/*',
+  srcHTML:    'app/src/**/*.+(html|njk)',
+  srcSCSS:    'app/src/**/*.scss',
+  srcMSCSS:   'app/src/scss/main.scss', // only the main scss file (dont need to grab all the scss partials when processing)
+  srcJS:      'app/src/**/*.js',
 
-  tmp:      'app/tmp/**/*',
-  tmpDest:  'app/tmp/',
-  tmpIndex: 'app/tmp/index.html',
-  tmpHTML:  'app/tmp/',
-  tmpCSS:   'app/tmp/css',
-  tmpJS:    'app/tmp/js',
+  tmp:        'app/tmp/**/*',
+  tmpDest:    'app/tmp/',
+  tmpIndex:   'app/tmp/index.html',
+  tmpHTML:    'app/tmp/',
+  tmpCSS:     'app/tmp/css',
+  tmpJS:      'app/tmp/js',
 
-  dist:      'app/dist',
-  distIndex: 'app/dist/index.html',
-  distHTML:  'app/dist/**/*.html',
-  distCSS:   'app/dist/**/*.css',
-  distJS:    'app/dist/**/*.js',
+  dist:       'app/dist',
+  distIndex:  'app/dist/index.html',
+  distHTML:   'app/dist/**/*.html',
+  distCSS:    'app/dist/**/*.css',
+  distJS:     'app/dist/**/*.js',
+
+  njkFiles:   ['app/src/templates/*.njk','app/src/templates/work/*.njk'],
+  templates:  'app/src/templates',
+  jsonFile:   './app/src/data/data.json',
+
 }
 
 // folder structure
@@ -95,7 +100,7 @@ gulp.task('html', function(){
     .pipe(gulp.dest(paths.tmpHTML));
 });
 
-// nunjucks render html function
+// nunjucks render html function - obselete
 gulp.task('render', function(){
   return gulp.src(paths.srcHTML)
     .pipe(nunjucks())
@@ -103,12 +108,15 @@ gulp.task('render', function(){
 });
 
 gulp.task('nunjucks',function(){
-  return gulp.src('app/src/templates/*.njx')
+  return gulp.src(paths.njkFiles,{
+    base: 'app/src/templates/' // https://opnsrce.github.io/how-to-make-gulp-copy-a-directory-and-its-contents
+    // How to preserve folder structure with gulp dest
+  })
     .pipe(data(function() {
-      return require('./app/src/data/data.json') // TODO make into a paths link
+      return require(paths.jsonFile)
     }))
     .pipe(nunjucksRender({
-      path: ['app/src/templates'] // TODO make into a paths link
+      path: paths.templates
     }))
     .pipe(gulp.dest(paths.tmpHTML))
 });

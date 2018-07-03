@@ -1,0 +1,42 @@
+{% set title = 'Portfolio 2018 Redesign | getpatlau' %}
+{% set description = 'Portfolio for Patrik Lau, UX Designer' %}
+{% set page_title = 'Work' %}
+{% extends "partials/_layout.njk" %}
+
+{% block content %}
+  {% include "partials/header.njk" %}
+  <article class="enter-transition-target">
+    <header class="landing-header sizefix centered">
+      <h1 class="landing-header-title portfolio-title">Portfolio 2018</h1>
+      <p class="landing-header-subtitle portfolio-subtitle">Learning Dev Environments and a bit of Design</p>
+    </header>
+    <section class="landing-work">
+      <figure>
+        <div class="work-figure-full" style="background-color: #FFF">
+          <img src="/images/port/portfolio/portfolio_1.png" class="work-img" style="max-height: 350px; opacity: 1;">
+        </div>
+      </figure>
+      <div class="sizefix centered">
+        <h2 class="work-title portfolio-title">mobile app ui feature design</h2>
+        <p class="work-summary portfolio-title">
+          <strong>For:</strong> Myself</a><br>
+          <strong>When:</strong> May 2018 - July 2018<br>
+        </p>
+        <h3 class="work-subtitle work-summary">role</h3>
+        <p></p>
+        <h3 class="work-subtitle work-summary">research</h3>
+        <p></p>
+        <div class="work-figure-full clearfix">
+          <img class="col-4" src="/images/port/portfolio/portfolio_user1.png" alt="portfolio user1" />
+          <img class="col-4" src="/images/port/portfolio/portfolio_user2.png" alt="portfolio user2" />
+          <img class="col-4" src="/images/port/portfolio/portfolio_user3.png" alt="portfolio user3" />
+        </div>
+        <p class="work-caption work-summary">
+        </p>
+        <p></p>
+        <h3 class="work-subtitle work-summary"></h3>
+        <p></p>
+
+      </div>
+  {% include "partials/footer.njk" %}
+{% endblock %}
