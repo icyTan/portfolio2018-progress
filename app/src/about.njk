@@ -1,0 +1,23 @@
+{% set title = 'Patrik Lau | getpatlau' %}
+{% set description = 'Portfolio for Patrik Lau, UX Designer' %}
+{% extends "partials/_layout.njk" %}
+
+{% block content %}
+  {% include "partials/header.njk" %}
+  <article class="enter-transition-target">
+    <header class="about-wrapper sizefix centered">
+      <div class="about-pic-wrapper">
+        <div class="about-pic"></div>
+      </div>
+      <div class="about-header">
+        <h1 class="about-header-title">I'm Patrik!<br>Nice to meet you!</h1>
+        <p class="about-header-subtitle">I do interaction design and am learning front-end development work.</p>
+        <p class="resume-btn"><a href="/docs/ResumeSummer2018.pdf" class="btn">View Resume</a></p>
+      </div>
+    </header>
+    <div class="about-content sizefix centered">
+      <p>something about me LOL</p>
+    </div>
+  </article>
+  {% include "partials/footer.njk" %}
+{% endblock %}

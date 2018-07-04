@@ -14,6 +14,7 @@ var browsersync = require('browser-sync').create(); // Creates a browser-sync in
 var paths = {
   src:        'app/src/**/*',
   srcHTML:    'app/src/**/*.+(html|njk)',
+  srcCSS:     'app/src/**/*.css',
   srcSCSS:    'app/src/**/*.scss',
   srcMSCSS:   'app/src/scss/main.scss', // only the main scss file (dont need to grab all the scss partials when processing)
   srcJS:      'app/src/**/*.js',
@@ -31,8 +32,8 @@ var paths = {
   distCSS:    'app/dist/**/*.css',
   distJS:     'app/dist/**/*.js',
 
-  njkFiles:   ['app/src/templates/*.njk','app/src/templates/work/*.njk'],
-  templates:  'app/src/templates',
+  njkFiles:   ['app/src/*.njk','app/src/work/*.njk'],
+  templates:  'app/src/',
   jsonFile:   './app/src/data/data.json',
 
 }
@@ -60,12 +61,6 @@ gulp.task('browser-sync', function() {
   });
 });
 
-// html task
-gulp.task('html', function(){
-  return gulp.src(paths.srcHTML)
-    .pipe(gulp.dest(paths.tmpDest));
-});
-
 // do sass task
 gulp.task('scss', function() {
   return gulp.src(paths.srcMSCSS) // return this : set retrival
@@ -83,6 +78,13 @@ gulp.task('scss', function() {
     .pipe(gulp.dest(paths.tmpCSS)); // set destination
 });
 
+gulp.task('css',function(){
+  return gulp.src(paths.srcCSS,{
+    nodir: true
+  })
+  .pipe(gulp.dest(paths.tmpDest)) // hacking the directories instead of properly copying
+});
+
 gulp.task('js', function(){
   return gulp.src(paths.srcJS)
   .pipe(concat('app.min.js'))
@@ -94,22 +96,9 @@ gulp.task('refresh', function () {
   browsersync.reload();
 });
 
-// html copy function
-gulp.task('html', function(){
-  return gulp.src(paths.srcHTML)
-    .pipe(gulp.dest(paths.tmpHTML));
-});
-
-// nunjucks render html function - obselete
-gulp.task('render', function(){
-  return gulp.src(paths.srcHTML)
-    .pipe(nunjucks())
-    .pipe(gulp.dest(src.dist));
-});
-
 gulp.task('nunjucks',function(){
   return gulp.src(paths.njkFiles,{
-    base: 'app/src/templates/' // https://opnsrce.github.io/how-to-make-gulp-copy-a-directory-and-its-contents
+    base: 'app/src/' // https://opnsrce.github.io/how-to-make-gulp-copy-a-directory-and-its-contents
     // How to preserve folder structure with gulp dest
   })
     .pipe(data(function() {
@@ -141,9 +130,12 @@ gulp.task('watch', ['browser-sync'], function() {
 
 
 // copy and set files for temp server
-gulp.task('copy',['html','scss','js']);
+gulp.task('copy',['nunjucks','scss','css','js']);
 
 // build files and send to dist folder
-gulp.task('build',['refresh']); // TODO
+gulp.task('build-dist',['refresh']); // TODO
+
+// build files and send to dist folder
+gulp.task('build-test',['refresh']); // TODO
 
 gulp.task('default', ['watch']);
