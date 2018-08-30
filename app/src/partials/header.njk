@@ -1,14 +1,25 @@
-<header class="header-bar" id="header">
-  <div class="sizefix centered clearfix">
+{# <header class="header-bar" id="header">
+  <div class="1-sf 1-wrap clearfix">
     <nav class="left-aligned">
       <div class="header-bar-logo-container">
-        <div class="header-bar-logo"><a id="home" href="/index.html">PL</a></div>
+        <div class="header-bar-logo"><a id="home" href="/index.html">Patrik Lau</a></div>
       </div>
     </nav>
     <nav class="right-aligned">
       <ul class=header-bar-nav>
         {% for item in navItems %}
         <li><a id="{{ item.menu_item | lower}}" href="/{{item.href | lower | replace(" ", "")}}" class="header-bar-nav-item {% if page_title == item.menu_item %}-active{% endif %}">{{item.menu_item}}</a></li>{% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header> #}
+<header class="header-bar ">
+  <div class="header-bar_content 1-wrap 1-sf">
+    <a href="f" class="header-bar_logo">Patrik Lau</a>
+    <nav class="header-bar_nav">
+      <ul class="header-bar_nav-list">
+        {% for item in navItems %}
+        <li><a id="{{ item.menu_item | lower}}" href="/{{item.href | lower | replace(" ", "")}}" class="header-bar_nav-item {% if page_title == item.menu_item %}-active{% endif %}">{{item.menu_item}}</a></li>{% endfor %}
       </ul>
     </nav>
   </div>

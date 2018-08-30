@@ -44,13 +44,13 @@ var paths = {
 // dist - processed and minified files
 
 // TODO:
-// https://medium.com/@andy.neale/nunjucks-a-javascript-template-engine-7731d23eb8cc
-// add templating from nunjucks
 // uglify js TEST
 // concat all scss
 // eventually pipe a production build
 
 // DONE:
+// https://medium.com/@andy.neale/nunjucks-a-javascript-template-engine-7731d23eb8cc
+// add templating from nunjucks
 // add modernizr support DONE
 // add minification to css TEST (????)
 
@@ -102,7 +102,7 @@ gulp.task('nunjucks',function(){
     // How to preserve folder structure with gulp dest
   })
     .pipe(data(function() {
-      return require(paths.jsonFile)
+      return require(paths.jsonFile) // this json file contains all the data that can be accessed to populate pages with
     }))
     .pipe(nunjucksRender({
       path: paths.templates
@@ -118,14 +118,19 @@ gulp.task('watch-html', ['browser-sync'], function(){
 // https://www.browsersync.io/docs/api <--- dont be dumb and follow the new 2.0.0+ API
 // format your gulp watches but then calling on a change to the instance of browsersync PLEASE
 
-// fix async problem properly
 // task should perform processing then send to tmp and then refresh
+// https://stackoverflow.com/questions/22082641/gulp-watch-execute-tasks-in-order-synchronous
+// not executing tasks in order, not a problem ATM but not properly implemented
+// proper order should be
+// if changes in scss/js/njk then process sepcific filetype scss/js/njk then refresh
+
 gulp.task('watch', ['browser-sync'], function() {
   gulp.watch(paths.srcSCSS, ['scss']);
   gulp.watch(paths.srcJS,['js']);
-  // gulp.watch(paths.srcHTML,['html']);
+  gulp.watch(paths.srcHTML,['nunjucks']);
   gulp.watch(paths.tmp,['refresh']); // hacked method for sequential task run
 });
+
 
 
 

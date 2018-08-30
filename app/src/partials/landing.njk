@@ -1,21 +1,30 @@
-<section class="landing-work">
-  <div class="sizewide centered">
-    <h2 class="landing-work-title">Work I've done</h2>
-    <div class="display">
-      {% for item in landingitems %}
-      <div class="work-item">
-        <div class="work-item-content">
-          <h3>{{ item.title }}</h3>
-          <p>
-            {{ item.subtitle }}
-          </p>
+<article class="enter-transition-target">
+  <header class="landing-header 1-sf 1-wrap">
+    <h1 class="landing-header-title">Patrik Lau</h1>
+    <div class="PatPic 1-wrap"></div>
+    <p class="landing-header-subtitle">UX and Interaction Designer</p>
+    <p class="landing-header-about">A learner in Vancouver, BC.</p>
+    <p class="landing-header-about">I take stuff apart and learn about them.</p>
+  </header>
+  <section class="landing-work">
+    <div class="1-sw 1-wrap">
+      <h2 class="landing-work-title">Work I've done</h2>
+      <div class="display">
+        {% for item in landingitems %}
+        <div class="work-item">
+          <div class="work-item-content">
+            <h3>{{ item.title }}</h3>
+            <p>
+              {{ item.subtitle }}
+            </p>
+          </div>
         </div>
+        {% else  %}
+        <li>
+          display when broken and not reading items
+        </li>
+        {% endfor %}
       </div>
-      {% else  %}
-      <li>
-        display when broken and not reading items
-      </li>
-      {% endfor %}
     </div>
-  </div>
-</section>
+  </section>
+</article>
