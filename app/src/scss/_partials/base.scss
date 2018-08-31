@@ -13,6 +13,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     vertical-align: baseline;
 }
 
+html{
+	height: 100%;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -32,7 +36,7 @@ strong{
 }
 
 a{
-	text-decoration: underline;
+	text-decoration: none;
 	color:$secondary-color;
 }
 
