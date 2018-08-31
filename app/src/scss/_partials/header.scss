@@ -17,6 +17,12 @@
     box-shadow: 0 1px 6px rgba(0,0,0,0.12);
 }
 
+.header-bar_content{
+	display:block;
+	position: relative;
+	align-items: baseline;
+}
+
 .header-bar-nav{
 	padding-left:0;
 	list-style: none;
@@ -26,20 +32,16 @@
 	display: inline-block;
 }
 
-.header-bar-logo>a{
-	color: $primary-color;
-}
-
 .header-bar-logo{
 	transition: opacity 0.125s, padding-top 0.25s, width 0.25s, height 0.25s;
 	padding-top: 3.9375rem;
-    padding-left: 0rem;
+  padding-left: 0rem;
 	margin-left: auto;
 	font-weight: 700;
-    text-transform: uppercase;
 }
 
 .header-bar-logo>a{
+	color: $primary-color;
 	text-decoration: none;
 	font-size: 2rem;
 }
