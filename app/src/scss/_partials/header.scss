@@ -6,6 +6,7 @@
 	transition-property: transform;
 	position: fixed;
 	background-color: #fff;
+	color: black;
 	z-index: 10;
 	width: 100%;
 }
@@ -47,7 +48,7 @@
 	padding-top: 1.5rem;
 	padding-bottom: .75rem;
 	white-space: nowrap;
-	color: $primary-color;
+	color: black;
 	font-family: "Lato",Arial,sans-serif;
 	font-size: 1rem;
 	font-weight: 600;
@@ -64,6 +65,7 @@
 	position: relative;
 	transition-duration: 0.3s;
 	transition-property: opacity, color;
+	color: black;
 	opacity: 0.5;
 	padding: 1.5rem 0.75rem 0.75rem;
 	font-weight: 600;
@@ -78,34 +80,9 @@
 	color: inherit;
 }
 
-
-.header-bar-nav-item{
-	transition: opacity 0.35s, padding-top 0.25s;
-	display: inline-block;
-	float: left;
-	padding-top: 3.9375rem;
-	padding-left: 1rem;
-	font-size: 0.875rem;
-	font-weight: 700;
-	text-transform: uppercase;
-	text-decoration: none;
-	color: $primary-color;
-}
-
-.header-bar-nav-item.-active{
-    color: $secondary-color;
-}
-
-.header-bar-nav-item:hover{
-	color: $secondary-color;
-}
-
-.header-bar-nav-item>p{
-	transition:color 0.125s;
-	cursor:pointer;
-	margin-bottom: 0;
-	font-size:0.875rem;
-	font-weight: 600;
+.header-bar_twitch{
+	background-color:purple;
+	color: white;
 }
 
 /*header sticky*/
