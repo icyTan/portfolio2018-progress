@@ -1,19 +1,23 @@
 // Config and Variables
 
-var $header = $("#header");
+var $header = $(".header-bar");
 var $scrollBottom = $(document).height()-$(window).height();
-var $test = 10;
+var previousWindowPos = 0;
+var scrolling = false;
 
 // functions
 
 function navSticky(){
 	var scroll_top = $(window).scrollTop();
 
-	if (scroll_top >= 40){
+	if (scroll_top > previousWindowPos){
 		$header.addClass('-sticky');
+	} else if (scroll_top < previousWindowPos) {
+		$header.removeClass('-sticky');
 	} else {
 		$header.removeClass('-sticky');
 	}
+	previousWindowPos = scroll_top;
 }
 
 // Handlers
@@ -26,7 +30,20 @@ $(window).load(function(){
 	$("footer").addClass('-loaded');
 });
 
-$(window).scroll(navSticky); // call constantly on a scroll
+// doing twitter method of scrolling
+// https://benmarshall.me/quit-attaching-javascript-handlers-to-scroll-events/
+$(window).scroll(function(){
+	scrolling = true;
+}); // call constantly on a scroll
+
+setInterval( function(){
+	if (scrolling) {
+		scrolling = false;
+		navSticky();
+	}
+}, 250);
+
+
 
 // prevent default unloading and do a transition
 $('a').click(function(e){

@@ -88,17 +88,6 @@
 /*header sticky*/
 
 .header-bar.-sticky{
-	height: 3.75rem;
-    background-color: #fff;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.12);
-}
-
-.header-bar.-sticky .header-bar-nav-item{
-    padding-top: 1.75rem;
-    padding-bottom: 0.9375rem;
-}
-
-.header-bar.-sticky .header-bar-logo{
-	padding-top: 1.2rem;
-	padding-bottom: 0.9375rem;
+	transform: translateY(-100%);
+	// this gets it out of the way and a little extra
 }
