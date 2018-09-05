@@ -4,7 +4,7 @@
 
 {% block content %}
   {% import "partials/header.njk" as header %}
-  {{ header.header('', navItems) }}
+  {{ header.header('header-bar_index', navItems) }}
   {% include "partials/landing.njk" %}
   {% include "partials/footer.njk" %}
 {% endblock %}
