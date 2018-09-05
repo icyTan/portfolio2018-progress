@@ -10,12 +10,15 @@ var scrolling = false;
 function navSticky(){
 	var scroll_top = $(window).scrollTop();
 
+	console.log("s: " + scroll_top + " ,p: " + previousWindowPos);
 	if (scroll_top > previousWindowPos){
-		$header.addClass('-sticky');
-	} else if (scroll_top < previousWindowPos) {
-		$header.removeClass('-sticky');
-	} else {
-		$header.removeClass('-sticky');
+		$header.removeClass('-detached');
+		$header.addClass('-hidden');
+	} else if (scroll_top < 50) {
+		$header.removeClass('-detached');
+	}else if (scroll_top < previousWindowPos) {
+		$header.addClass('-detached');
+		$header.removeClass('-hidden');
 	}
 	previousWindowPos = scroll_top;
 }
@@ -41,7 +44,8 @@ setInterval( function(){
 		scrolling = false;
 		navSticky();
 	}
-}, 250);
+}, 100);
+// can get stuck if scrolling to fast, just needs to reset if a problem.
 
 
 

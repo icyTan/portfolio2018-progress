@@ -18,6 +18,7 @@ var paths = {
   srcSCSS:    'app/src/**/*.scss',
   srcMSCSS:   'app/src/scss/main.scss', // only the main scss file (dont need to grab all the scss partials when processing)
   srcJS:      'app/src/**/*.js',
+  srcIMG:     'app/src/images/**/*',
 
   tmp:        'app/tmp/**/*',
   tmpDest:    'app/tmp/',
@@ -108,6 +109,13 @@ gulp.task('nunjucks',function(){
       path: paths.templates
     }))
     .pipe(gulp.dest(paths.tmpHTML))
+});
+
+gulp.task('copy-images',function(){
+  return gulp.src(paths.srcIMG,{
+    base: 'app/src/' // https://opnsrce.github.io/how-to-make-gulp-copy-a-directory-and-its-contents
+    // How to preserve folder structure with gulp dest
+  }).pipe(gulp.dest(paths.tmpDest))
 });
 
 // gulp watch task for rendering nunjucks pages

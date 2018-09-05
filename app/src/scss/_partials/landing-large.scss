@@ -1,5 +1,17 @@
 @media only screen and (min-width: 600px){
+  .hero-1{
+  	padding-top: 10rem;
+  }
+  .landing-work {
+    padding-bottom: 4rem;
+  }
   .display .work-item{
     width:49.5%;
+  }
+  .landing-work_item:hover .landing-work_item-title{
+  	color: red;
+  }
+  .landing-work_content{
+  	margin-bottom: 2rem;
   }
 }

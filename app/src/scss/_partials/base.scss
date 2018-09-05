@@ -72,6 +72,19 @@ body{
     line-height: 1;
     -webkit-tap-highlight-color: transparent;
 }
+/* hidden elements */
+.vis-hide{
+	position: absolute;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	direction: ltr;
+	clip: rect(0,0,0,0);
+	// this covers everything and ensures its hidden and doesnt occupy space
+}
 
 /*Top level*/
 .wrap-body{
@@ -84,8 +97,12 @@ body{
 	max-width: 48rem;
 }
 
-.sw-1{
+.sf-2{
 	max-width: 63rem;
+}
+
+.sf-3{
+	max-width: 40rem;
 }
 
 .wrap-1{
@@ -118,6 +135,14 @@ body{
 	color: $primary-color;
 	font-weight:500;
 	margin-bottom: 0;
+}
+
+.overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 

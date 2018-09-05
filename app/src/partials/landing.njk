@@ -1,25 +1,58 @@
 <div class="wrap-1-content">
-  <section class="landing_intro hero-1 wrap-1 wrap-1--md">
-
+  <section class="landing-work hero-1 wrap-1 sf-1">
+    <h2 class="vis-hide">Patrik Lau</h2>
+    <p class="landing-title center-text">Interface designer whos working towards coding great digital experiences.</p>
   </section>
-  <section class="landing-work">
-    <div class="sw-1 wrap-1">
-      <h2 class="landing-work-title">Work I've done</h2>
+  <section class="landing-work_list">
+    <h2 class="vis-hide">Work</h2>
+    <div class="sf-2 wrap-1">
+      <h2 class="vis-hide landing-work-title">Work I've done</h2>
       <div class="display">
-        {% for item in landingitems %}
-        <div class="work-item">
-          <div class="work-item-content">
-            <h3>{{ item.title }}</h3>
-            <p>
-              {{ item.subtitle }}
-            </p>
+        <div class="landing-work_item col-6">
+          <div class="landing-work_content">
+            <div class="landing-work_box landing-work_box-portfolio"></div>
+            <img src="images/portfolio/preview.png" alt="portfolio preview" width="462" height="324" class="landing-work_preview-img img-lazy">
           </div>
+          <div class="landing-work_meta">
+            <span class="landing-work_item-title">portfolio</span>
+            <span class="landing-work_item-desc">development</span>
+          </div>
+          <a class="overlay" href="/work/portfolio"></a>
         </div>
-        {% else  %}
-        <li>
-          display when broken and not reading items
-        </li>
-        {% endfor %}
+        <div class="landing-work_item col-6">
+          <div class="landing-work_content">
+            <div class="landing-work_box landing-work_box-yvr"></div>
+            <img src="images/portfolio/preview.png" alt="portfolio preview" width="462" height="324" class="landing-work_preview-img img-lazy">
+          </div>
+          <div class="landing-work_meta">
+            <span class="landing-work_item-title">yvr</span>
+            <span class="landing-work_item-desc">redesign/consult</span>
+          </div>
+          <a class="overlay" href="/work/portfolio"></a>
+        </div>
+        <div class="landing-work_item col-6">
+          <div class="landing-work_content">
+            <div class="landing-work_box landing-work_box-twitch"></div>
+            <img src="images/portfolio/preview.png" alt="portfolio preview" width="462" height="324" class="landing-work_preview-img img-lazy">
+          </div>
+          <div class="landing-work_meta">
+            <span class="landing-work_item-title">twitch</span>
+            <span class="landing-work_item-desc">redesign</span>
+          </div>
+          <a class="overlay" href="/work/portfolio"></a>
+        </div>
+        <div class="landing-work_item col-6">
+          <div class="landing-work_content">
+            <div class="landing-work_box landing-work_box-visier"></div>
+            <img src="images/portfolio/preview.png" alt="portfolio preview" width="462" height="324" class="landing-work_preview-img img-lazy">
+          </div>
+          <div class="landing-work_meta">
+            <span class="landing-work_item-title">visier</span>
+            <span class="landing-work_item-desc">work experiencez</span>
+          </div>
+          <a class="overlay" href="/work/portfolio"></a>
+        </div>
+      </div>
       </div>
     </div>
   </section>
