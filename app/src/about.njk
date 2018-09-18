@@ -1,10 +1,11 @@
-{% set title = 'Patrik Lau | getpatlau' %}
+{% set title = 'Patrik Lau' %}
 {% set page_title = 'About' %}
 {% set description = 'Portfolio for Patrik Lau, UX Designer' %}
 {% extends "partials/_layout.njk" %}
 
 {% block content %}
-  {% include "partials/header.njk" %}
+{% import "partials/header.njk" as header %}
+{{ header.header('header-bar_index', navItems) }}
   <article class="enter-transition-target">
     <header class="about-wrapper sf-1 wrap-1">
       <div class="about-pic-wrapper">

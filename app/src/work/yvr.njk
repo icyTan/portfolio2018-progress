@@ -4,7 +4,8 @@
 {% extends "partials/_layout.njk" %}
 
 {% block content %}
-  {% include "partials/header.njk" %}
+  {% import "partials/header.njk" as header %}
+  {{ header.header('header-bar_index', navItems) }}
   <article class="enter-transition-target">
     <header class="landing-header sf-1 wrap-1">
       <h1 class="landing-header-title yvr-title">YVR mobile app review and suggestions</h1>
