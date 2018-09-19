@@ -10,7 +10,7 @@ var scrolling = false;
 function navSticky(){
 	var scroll_top = $(window).scrollTop();
 
-	console.log("s: " + scroll_top + " ,p: " + previousWindowPos);
+	// console.log("s: " + scroll_top + " ,p: " + previousWindowPos);
 	if (scroll_top > previousWindowPos){
 		$header.removeClass('-detached');
 		$header.addClass('-hidden');

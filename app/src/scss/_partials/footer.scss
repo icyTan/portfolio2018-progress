@@ -1,16 +1,26 @@
 /*footer*/
 .footer{
-	display: table-row;
-	height: 1px;
 }
 
+.footer-content{
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+	width: 100%;
+	list-style: none;
+	font-weight: 500;
+}
 .footer-contact{
 	padding-top: 3rem;
 	font-size: 1.3125rem;
 	text-align: center;
 	color: #6F90A4;
 }
-
+.footer-link{
+	padding: .5rem 1rem .5rem 0;
+	font-size: 1rem;
+}
 .footer-contact-btn{
 	margin-top: 1rem;
 	margin-bottom: 1.5rem;
@@ -39,7 +49,7 @@
 
 .btn-youtube{
 	transition:color 0.35s;
-	font-size: 6rem !important;
+	font-size: 6rem;
 	color:black;
 }
 
@@ -48,9 +58,7 @@
 }
 
 .footer-copyright{
-	margin-top:1rem;
-	margin-bottom: 3rem;
+	margin-left: auto;
 	font-size: 1rem;
-	text-align: center;
 	color:#6F90A4;
 }
