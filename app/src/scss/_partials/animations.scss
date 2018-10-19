@@ -27,6 +27,24 @@
     }
 }
 
+@keyframes expandingBoxTransition {
+    0% {
+				transform: scale(1);
+    }
+    100% {
+				transform: scale(10);
+    }
+}
+
+@keyframes fadeImageBox {
+    0% {
+				opacity: 1;
+    }
+    100% {
+				opacity: 0;
+    }
+}
+
 /*header sticky*/
 .-hidden{
 	transform: translateY(-100%);
