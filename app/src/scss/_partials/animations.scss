@@ -13,6 +13,20 @@
 	transform: translateY(-25px);
 }
 
+// how do make non JS on load transitions
+// https://stackoverflow.com/questions/6805482/css3-transition-animation-on-load
+/* page fade in */
+@keyframes fullPageFadeIn {
+    0% {
+        opacity: 0;
+				transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+				transform: translateY(0px);
+    }
+}
+
 /*header sticky*/
 .-hidden{
 	transform: translateY(-100%);
