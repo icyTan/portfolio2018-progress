@@ -1,0 +1,19 @@
+/* hero across pages*/
+.hero-1{
+  padding-top: 8rem;
+}
+
+.work__hero{
+  overflow: hidden;
+}
+
+.subtitle{
+  line-height: 1.428571429;
+  font-size: 1.375rem;
+}
+
+/* specific hero pages */
+.work__hero--portfolio{
+  background-color: $primary-color;
+  color: #FFF;
+}

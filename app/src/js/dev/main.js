@@ -1,11 +1,11 @@
 // Config and Variables
 
-// var $header = $(".header-bar");
 var header = document.getElementsByTagName("header")[0];
 var previousWindowPos = 0;
 var scrolling = false;
 
 // functions
+/* checks scroll direction and adds states based on such*/
 function navSticky(){
 	var scroll_top = pageYOffset;
 
@@ -58,6 +58,6 @@ for(let i = 0; i < overlaySelection.length; i++) {
 		document.getElementsByClassName('landing-work_item')[i].style.zIndex = "3" // set z-index of select item higher than others
 		setTimeout(function(){
 			document.location.href=overlaySelection[i].getAttribute('href');
-		},500); // delay go to link by 2 secs
+		},600); // delay go to link by 2 secs
   })
 }
