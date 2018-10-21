@@ -48,7 +48,8 @@
 	padding-top: 1.5rem;
 	padding-bottom: .75rem;
 	white-space: nowrap;
-	color:black;
+	color:inherit;
+	opacity: 0.75;
 	font-family: "Lato",Arial,sans-serif;
 	font-size: 1rem;
 	font-weight: 600;
@@ -65,7 +66,7 @@
 	position: relative;
 	transition-duration: 0.3s;
 	transition-property: opacity, color;
-	color: black;
+	color: inherit;
 	opacity: 0.5;
 	padding: 1.5rem 0.75rem 0.75rem;
 	font-weight: 600;
@@ -80,7 +81,24 @@
 	color: inherit;
 }
 
+.header-bar_index{
+	background-color:none;
+	color: black;
+}
+
+.header-bar_portfolio{
+	background-color:$portfolio-color;
+	color: white;
+}
+.header-bar_visier{
+	background-color:$visier-color;
+	color: white;
+}
+.header-bar_yvr{
+	background-color:$yvr-color;
+	color: white;
+}
 .header-bar_twitch{
-	background-color:purple;
+	background-color:$twitch-color;
 	color: white;
 }

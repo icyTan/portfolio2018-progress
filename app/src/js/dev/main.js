@@ -54,7 +54,7 @@ for(let i = 0; i < overlaySelection.length; i++) {
 		event.preventDefault();
     console.log("Clicked index: " + i);
 		document.getElementsByClassName('landing-work_box')[i].classList.add('expanding-box'); // select box of same position on page and add the expanding box / circle
-		document.getElementsByClassName('landing-work_preview-img')[i].classList.add('fade-image-box'); // select box of same position on page and add the image fade
+		document.getElementsByClassName('landing-work_preview-img')[i].classList.add('fade-out'); // select box of same position on page and add the image fade
 		document.getElementsByClassName('landing-work_item')[i].style.zIndex = "3" // set z-index of select item higher than others
 		setTimeout(function(){
 			document.location.href=overlaySelection[i].getAttribute('href');

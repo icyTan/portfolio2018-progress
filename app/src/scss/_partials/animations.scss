@@ -45,7 +45,7 @@
     }
 }
 
-@keyframes fadeImageBox {
+@keyframes fadeOut {
     0% {
 				opacity: 1;
     }
@@ -53,6 +53,47 @@
 				opacity: 0;
     }
 }
+@keyframes fullPageFadeOut {
+    0% {
+				opacity: 1;
+				z-index: 10;
+				height:100vh;
+				width:100vw;
+    }
+		// this is so the overlay doesn't sit ontop, and without deleting the element in js
+		98%{
+				height:100vh;
+		}
+		99%{
+				height:0vh;
+		}
+    100% {
+				height:0vh;
+				opacity: 0;
+				z-index: 0;
+    }
+}
+
+.fade-in {
+	animation: 0.5s ease-out 0s 1 forwards fadeIn;
+}
+
+.fullpage-fade-in{
+	animation: 0.5s ease-out 0s 1 fullPageFadeIn;
+}
+
+.fade-out {
+	animation: 0.2s ease-out 0s 1 forwards fadeOut;
+}
+
+.fullpage-fade-out {
+	animation: 1s ease-out 0s 1 forwards fullPageFadeOut;
+}
+
+.expanding-box {
+	animation: 0.5s ease-out 0s 1 forwards expandingBoxTransition;
+}
+
 
 /*header sticky*/
 .-hidden{

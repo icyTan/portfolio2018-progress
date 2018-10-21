@@ -7,6 +7,27 @@
   overflow: hidden;
 }
 
+.work_header{
+  display: table;
+  padding-top: 1.5rem;
+}
+.work__info {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+.work__info-label {
+  display: block;
+  color: $light-grey;
+  font-size: .875rem;
+  font-family: Arial,sans-serif;
+  font-weight: 600;
+}
+.work__info-value {
+  display: block;
+  font-family: Arial,sans-serif;
+  font-weight: 600;
+}
+
 .subtitle{
   line-height: 1.428571429;
   font-size: 1.375rem;
@@ -14,6 +35,20 @@
 
 /* specific hero pages */
 .work__hero--portfolio{
-  background-color: $primary-color;
+  background-color: $portfolio-color;
   color: #FFF;
+}
+
+/* page covers for work pages */
+.page-cover{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+}
+
+.page-cover__portfolio{
+  background-color: $portfolio-color;
 }

@@ -21,15 +21,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block;
 }
 
-p,h1,h2,{
+p,h1,h2,h3,ul,ol,blockquote,figcaption{
 	margin-top: 0;
+}
+p,h1,h2,h3,ul,ol,blockquote,figcaption{
+	line-height: 1.5;
+}
+p,h1,h2,h3,ul,ol,blockquote,figcaption{
+	font-size: 16px;
 }
 
 p{
-	line-height: 1.5;
 	margin-bottom: 1.5rem;
 	font-weight:300;
-	font-size: 16px;
 }
 
 strong{
@@ -120,8 +124,6 @@ body{
 	flex-grow: 1;
 	flex-shrink: 1;
 	flex-basis: 0%;
-
-	animation: 0.5s ease-out 0s 1 fullPageFadeIn;
 }
 
 .left-aligned{

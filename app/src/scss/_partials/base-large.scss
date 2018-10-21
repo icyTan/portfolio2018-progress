@@ -1,7 +1,11 @@
 @media only screen and (min-width: 600px){
+  p,h1,h2,h3,ul,ol,blockquote,figcaption{
+  	line-height: 1.6666;
+  }
+  p,h1,h2,h3,ul,ol,blockquote,figcaption{
+  	font-size: 1.125rem;
+  }
   p{
   	margin-bottom: 1.87493rem;
-    line-height: 1.6666;
-    font-size: 1.125rem;
   }
 }
