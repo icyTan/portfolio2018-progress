@@ -31,6 +31,7 @@
 	width: 80%;
 	max-width: 400px;
 	will-change: transform;
+	z-index: 3;
 }
 .landing-work_box::after{
 	display: block;

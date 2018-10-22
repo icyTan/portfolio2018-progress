@@ -5,54 +5,38 @@
 
 {% block content %}
 {% import "partials/header.njk" as header %}
-{{ header.header('header-bar_index', navItems) }}
-  <article class="enter-transition-target">
-    <header class="landing-header sf-1 wrap-1">
-      <h1 class="landing-header-title twitch-title">Reccomended Feature</h1>
-      <p class="landing-header-subtitle twitch-subtitle">Twitch Mobile App Design Suggestion (for a previous version)</p>
-    </header>
-    <section class="landing-work">
-      <figure>
-        <div class="work-figure-full" style="background-color: #FFF">
-          <img src="/images/port/twitch/twitch_1.png" class="work-img" style="max-height: 350px; opacity: 1;">
-        </div>
-      </figure>
-      <div class="sf-1 wrap-1">
-        <h2 class="work-title twitch-title">mobile app ui feature design</h2>
-        <p class="work-summary twitch-title">
-          <strong>Roles:</strong> Research of possible design gaps in app. UI design and presentation deck.<br>
-          <strong>For:</strong> School Project</a><br>
-          <strong>When:</strong> March 2017<br>
-        </p>
-        <h3 class="work-subtitle work-summary">role</h3>
-        <p>Twitch has updated their mobile app to include many changes including changes that target some of the needs of this project.
-        See these changes Twitch has done to their app here: <a href="https://blog.twitch.tv/new-twitch-mobile-app-available-now-aa527264091b">Twitch Mobile App Update Annoucement</a>.</p>
-        <h3 class="work-subtitle work-summary">research</h3>
-        <p>With my partner, we <strong>identified</strong> in that version of Twitch’s mobile app lacked the ability of the desktop site to onboard brand new viewers to the Twitch viewing experience through a set of curated broadcasters. The feature we proposed for the Twitch was to have a Recommended viewing experience that would mimic the benefits of the landing page of the desktop site but redesign in layout for the mobile platform.</p>
-        <div class="work-figure-full clearfix">
-          <img class="col-4" src="/images/port/twitch/twitch_user1.png" alt="twitch user1" />
-          <img class="col-4" src="/images/port/twitch/twitch_user2.png" alt="twitch user2" />
-          <img class="col-4" src="/images/port/twitch/twitch_user3.png" alt="twitch user3" />
-        </div>
-        <p class="work-caption work-summary">
-          These are the three users we quickly evalutated for preliminary research.
-        </p>
-        <p>This feature’s design began from preliminary research with potential users conducted on campus. From this small subset we identified a gap in user's not finding exactly what they want or finding what they want as a consequence of the current design not as part of an intent.</p>
-        <h3 class="work-subtitle work-summary">propsed design</h3>
-        <p>Our proposed design was to create a curated channel feed and featured broadcaster section to help users find new content and let see what's popular on Twitch's platform. Users can make use of this section by entering it and browsing whats inside and entering a featured broadcaster’s channel. When entering the Twitch App they can enter at a point that sets themselves up for a quick entry to a broadcaster channel they should have more enjoyment viewing.</p>
-        <div class="work-figure-full clearfix">
-          <img class="col-12" src="/images/port/twitch/twitch_entry.png" alt="twitch splash" />
-        </div>
-        <p>By creating a “Recommended” page we want surface content that would have more meaningful information to new users. Current presentation is visually dense screens with little contextual information and content based purely on number of viewers.</p>
-        <p>This would allow new or amatuer users to better browse for popular content and choose a stream they wish to watch based on the information provided by the recommendations.</p>
-        <h3 class="work-subtitle work-summary">design decisions</h3>
-        <p>The main decisions made in terms of interface design was in ensuring maintaining the branding and style that Twitch has used in the rest of the application, as well as finding the ideal entry point for users to enter the Recommended tab from.</p>
-        <div class="work-figure-full clearfix">
-          <img class="col-12" src="/images/port/twitch/twitch_5.png" alt="twitch splash" />
-          <img class="col-12" src="/images/port/twitch/twitch_6.png" alt="twitch splash" />
-        </div>
-        <p>The presentation of a recomended stream presents the information necessary for a new viewer to get what the stream is about, and possible reasons to watch. The possible reasons include the description, view count, follow count, and concurrent viewers.</p>
-        <p>You can see the whole slide deck here: <a class="twitch-title" href="docs/twitchfeaturedesign.pdf">Slide deck</a>.</p>
+{{ header.header('header-bar_twitch', navItems) }}
+<div class="wrap-1-content">
+  <section class="work__hero work__hero--twitch hero-1 ">
+    <div class="wrap-1 sf-1">
+      <h1 class="work__title">Twitch Mobile feature design</h1>
+      <p class="work__subtitle">Research, and interative design</p>
+      <img src="/images/portfolio/preview.png" width="622" height="440" class="img-lazy" />
+    </div>
+  </section>
+  <section class="work__content">
+    <div class="wrap-1 sf-1 work_header">
+      <h2 class="vis-hide">Information</h2>
+      <div class="work__info col-12">
+        <span class="work__info-label">My Roles</span>
+        <span class="work__info-value">Development, Research</span>
       </div>
+      <div class="work__info col-4">
+        <span class="work__info-label">Company</span>
+        <span class="work__info-value">School</span>
+      </div>
+      <div class="work__info col-8">
+        <span class="work__info-label">Time Period</span>
+        <span class="work__info-value">March 2017</span>
+      </div>
+    </div>
+    <div class="wrap-1 sf-1">
+
+    </div>
+  </section>
+</div>
+<div class="page-cover page-cover__twitch fullpage-fade-out">
+
+</div>
   {% include "partials/footer.njk" %}
 {% endblock %}

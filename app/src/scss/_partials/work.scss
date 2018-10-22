@@ -38,6 +38,18 @@
   background-color: $portfolio-color;
   color: #FFF;
 }
+.work__hero--yvr{
+  background-color: $yvr-color;
+  color: #FFF;
+}
+.work__hero--visier{
+  background-color: $visier-color;
+  color: #FFF;
+}
+.work__hero--twitch{
+  background-color: $twitch-color;
+  color: #FFF;
+}
 
 /* page covers for work pages */
 .page-cover{
@@ -51,4 +63,13 @@
 
 .page-cover__portfolio{
   background-color: $portfolio-color;
+}
+.page-cover__twitch{
+  background-color: $twitch-color;
+}
+.page-cover__visier{
+  background-color: $visier-color;
+}
+.page-cover__yvr{
+  background-color: $yvr-color;
 }

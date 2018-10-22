@@ -9,15 +9,19 @@ var scrolling = false;
 function navSticky(){
 	var scroll_top = pageYOffset;
 
-	// console.log("s: " + scroll_top + " ,p: " + previousWindowPos);
-	if (scroll_top > previousWindowPos){ // on scroll down
-		header.classList.remove('-detached');
-		header.classList.add('-hidden');
-	} else if (scroll_top < 50) { // close to top of page
-		header.classList.remove('-detached');
-	}else if (scroll_top < previousWindowPos) { // on scroll up
-		header.classList.add('-detached');
+	console.log("s: " + scroll_top + " ,p: " + previousWindowPos);
+	if (scroll_top < previousWindowPos){ // on scroll down
 		header.classList.remove('-hidden');
+			if (scroll_top > 50) { // close to top of page
+				header.classList.add('-detached');
+			} else {
+				header.classList.remove('-detached');
+			}
+	} else if (scroll_top > previousWindowPos) { // on scroll up
+		header.classList.remove('-detached');
+		if (scroll_top > 50) { // close to top of page
+			header.classList.add('-hidden');
+		}
 	}
 	previousWindowPos = scroll_top;
 }
@@ -40,7 +44,7 @@ setInterval( function(){
 		scrolling = false;
 		navSticky();
 	}
-}, 100);
+}, 50);
 // can get stuck if scrolling to fast, just needs to reset if a problem.
 
 // Landing page fancy expanding transitions

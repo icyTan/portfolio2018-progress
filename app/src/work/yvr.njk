@@ -4,61 +4,39 @@
 {% extends "partials/_layout.njk" %}
 
 {% block content %}
-  {% import "partials/header.njk" as header %}
-  {{ header.header('header-bar_index', navItems) }}
-  <article class="enter-transition-target">
-    <header class="landing-header sf-1 wrap-1">
-      <h1 class="landing-header-title yvr-title">YVR mobile app review and suggestions</h1>
-      <p class="landing-header-subtitle yvr-subtitle">Suggestions for YVR App (2015)</p>
-    </header>
-    <section class="landing-work">
-      <figure>
-        <div class="work-figure-full" style="background-color: #FFF">
-          <img src="/images/port/yvr/yvr_1.png" class="work-img" style="max-height: 350px; opacity: 1;">
-        </div>
-      </figure>
-      <div class="sf-1 wrap-1">
-        <h2 class="work-title yvr-title">mobile app interface improvements</h2>
-        <p class="work-summary yvr-title">
-          <strong>Roles:</strong> Review of app journey paths.<br>
-          <strong>For:</strong> Side project</a><br>
-          <strong>When:</strong> January 2016<br>
-        </p>
-        <h3 class="work-subtitle work-summary">role</h3>
-        <p>I was asked to do a review of an application and provide insights and suggestions for fixings or future features.
-        You can see the mobile app yourself at: <a href="https://play.google.com/store/apps/details?id=com.yvr.airport&hl=en">Google Play Store</a>.</p>
-        <h3 class="work-subtitle work-summary">inital take</h3>
-        <p>That iteration of the YVR app was functional. The initial steps that I got to take when first using the app made sense and felt right in terms of feedback and response to actions taken. However past the intial screens the experience became disjointed with unexpected behaviour and unfamilar interaction patterns./p>
-        <div class="work-figure-full clearfix">
-          <img class="col-12" src="/images/port/yvr/yvr_2.png" alt="yvr 3d map" />
-        </div>
-        <h3 class="work-subtitle work-summary">the good</h3>
-        <p>Visual style works and doesn’t need any refinement at the moment. Fits YVR colours and style are fine if not a little outside of material design trends. Menu is visually appealing and still reasonable navigatable.</p>
-        <p>The 3D map beginning a wayfinding experience is great for user engagement, and keeps user on track for travel. Overall the 3D map is a selling point that provided an attracive way to navigate the Vancouver International Airport.</p>
-        <div class="work-figure-full clearfix">
-          <img class="col-6" src="/images/port/yvr/yvr_4.png" alt="yvr current itinerary" />
-          <img class="col-6" src="/images/port/yvr/yvr_3.png" alt="yvr suggested itineray" />
-        </div>
-        <h3 class="work-subtitle work-summary">the unexpected</h3>
-        <p>Itinerary display only displays the path to the gate your selected flight is at, at first glance. In order to see or add other locations to your itinerary, that is done through a seperate process in the guide section of the app.</p>
-        <p>Which item is shown? How do I select where I am going now? These are questions that I asked when in the itinerary display. I would like to see the itinerary used like a roadmap or task list, where locations are set then allowed to be traveled between.</p>
-        <h3 class="work-subtitle work-summary">design decisions</h3>
-        <p>The main decisions made in terms of interface design was in ensuring maintaining the branding and style that Twitch has used in the rest of the application, as well as finding the ideal entry point for users to enter the Recommended tab from.</p>
-        <div class="work-figure-full clearfix">
-          <div class="col-3"></div>
-          <img class="col-6" src="/images/port/yvr/yvr_6.png" alt="yvr splash" />
-          <div class="col-3"></div>
-        </div>
-        <p>
-          Opening the itinerary, moving between certain menu areas, switches between menu and map, all are actions that a user should be allowed to go “back” a step from. A misclick or a quick change causes the application to close which can frustrate and surprise users.
-        </p>
-        <div class="work-figure-full clearfix">
-          <img class="col-6" src="/images/port/yvr/yvr_7.png" alt="yvr current menu list" />
-          <img class="col-6" src="/images/port/yvr/yvr_8.png" alt="yvr suggested menu list" />
-        </div>
-        <p>The menu list has different arrows for actions that have a dropdown and actions that take you to a new screen. A more visually distinctive method can be used to keep the same list. An endpoint in the navigation can be shown as a distinctive icon.</p>
-        <p>Or these different areas may or may not have a case to be moved into two access workflows. One for dropdown menus and items and another for services as an example.</p>
-        <p>You can see the whole review here: <a href="docs/yvrreview.pdf">Review Print Document</a>.</p>
+{% import "partials/header.njk" as header %}
+{{ header.header('header-bar_yvr', navItems) }}
+  <div class="wrap-1-content">
+    <section class="work__hero work__hero--yvr hero-1 ">
+      <div class="wrap-1 sf-1">
+        <h1 class="work__title">Twitch Mobile feature design</h1>
+        <p class="work__subtitle">Research, and interative design</p>
+        <img src="/images/portfolio/preview.png" width="622" height="440" class="img-lazy" />
       </div>
+    </section>
+    <section class="work__content">
+      <div class="wrap-1 sf-1 work_header">
+        <h2 class="vis-hide">Information</h2>
+        <div class="work__info col-12">
+          <span class="work__info-label">My Roles</span>
+          <span class="work__info-value">Development, Research</span>
+        </div>
+        <div class="work__info col-4">
+          <span class="work__info-label">Company</span>
+          <span class="work__info-value">School</span>
+        </div>
+        <div class="work__info col-8">
+          <span class="work__info-label">Time Period</span>
+          <span class="work__info-value">March 2017</span>
+        </div>
+      </div>
+      <div class="wrap-1 sf-1">
+
+      </div>
+    </section>
+  </div>
+  <div class="page-cover page-cover__yvr fullpage-fade-out">
+
+  </div>
   {% include "partials/footer.njk" %}
 {% endblock %}

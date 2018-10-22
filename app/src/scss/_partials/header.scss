@@ -8,7 +8,8 @@
 	background-color: $grey;
 	color: $pink;
 	width: 100%;
-	z-index: 1;
+	z-index: 3;
+	// keep z-index the same as overlay as they are in the same z-index layer but header is above it(in html order)
 }
 
 .header-bar.-collapsed{

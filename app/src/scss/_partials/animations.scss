@@ -38,9 +38,11 @@
 
 @keyframes expandingBoxTransition {
     0% {
+				z-index: 3;
 				transform: scale(1);
     }
     100% {
+				z-index: 10;
 				transform: scale(10);
     }
 }

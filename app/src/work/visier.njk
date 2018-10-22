@@ -5,34 +5,38 @@
 
 {% block content %}
 {% import "partials/header.njk" as header %}
-{{ header.header('header-bar_index', navItems) }}
-  <article class="enter-transition-target">
-    <header class="landing-header sf-1 wrap-1">
-      <h1 class="landing-header-title visier-title">Viser</h1>
-      <p class="landing-header-subtitle visier-subtitle">UI/UX Designer Intership</p>
-    </header>
-    <section class="landing-work">
-      <figure>
-        <div class="work-figure-full" style="background-color: #FFF">
-          <img src="/images/port/visier/visier-thumb.png" class="work-img" style="max-height: 350px; opacity: 1;">
-        </div>
-      </figure>
-      <div class="sf-1 wrap-1">
-        <h2 class="work-title">real world experience</h2>
-        <p class="work-summary visier-title">
-          <strong>Roles:</strong> UI design and medium fidelity prototyping, customer support portal management.<br>
-          <strong>Company:</strong> <a href="http://www.visier.com/">Visier</a><br>
-          <strong>When:</strong> January 2014 - August 2014<br>
-        </p>
-        <h3 class="work-subtitle work-summary">role</h3>
-        <p>At Visier Inc. I worked essentially as a Junior User Experience Designer. My work consisted of developing user workflows and prototyping interfaces for said workflows for the Workforce Analytics and Workforce Planning products. At Visier I got to apply user research practices and perform user tests in a variety of procedures from formal lab tests to <a href="https://www.nngroup.com/articles/flexible-usability-testing/">flexible</a> user testing. Due to Visier's audience mainly being <a href="http://www.visier.com/customer-success/customers/">Human Resource</a> professionals, performing user tests let me acquaint myself with Visier's user base and their needs.</p>
-        <h3 class="work-subtitle work-summary">process</h3>
-        <p>During my time as Visier, I worked between developers and the design team to complete projects as they came. I <strong>produced</strong> design documents that a developer group would review and iterate in order to realize what was possible and what was not within time or technological limitations. The final versions of prototypes would be presented to more senior developers and then to the company at the time in order to get feedback on the interface or interaction pattern.</p>
-        <h3 class="work-subtitle work-summary">customer support portal</h3>
-        <p>In the second half of my time at Visier I was tasked with helping start a customer portal service using the <a href="http://www.salesforce.com/">Force.com</a> platform. I got to learn rudimentary knowledge of how to work within the Salesforce platform, and work with contractors to realize a taskflow that we wanted within the visual design of the customer portal. In this project I was in direct contact with the contracted services and was in partial management of these people in order to start the customer portal service on time. From this project I learned to <strong>manage up</strong>, as one of the managers said, which was to take charge of management when work slows down for various reasons.</p>
-        <h3 class="work-subtitle work-summary">reflection</h3>
-        <p>The large challenge at Visier for myself was learning to manage myself in an office environment. As this was my first experience in a proper office, I was helped out by Ju Wu, Graeme Corrin, and Max Bitel. These guys directed many of the co-op students at Visier and smoothed the learning curve for integrating to an office environment.</p>
-        <p>At Visier I was able to learn more about data visualization and adapted to work in rapid group setting with various developers. The work at hand improved my digital prototyping skills with the Adobe Creative Suite for making medium to high fidelity prototypes, and learned some tricks with these to make quick user tests with Powerpoint and in HMTL with CSS and Javascript. Experience with working on some novel interfaces for mobile and 10 foot design spaces allowed me to apply UX knowledge into a new area as well.</p>
+{{ header.header('header-bar_visier', navItems) }}
+<div class="wrap-1-content">
+  <section class="work__hero work__hero--visier hero-1 ">
+    <div class="wrap-1 sf-1">
+      <h1 class="work__title">Twitch Mobile feature design</h1>
+      <p class="work__subtitle">Research, and interative design</p>
+      <img src="/images/portfolio/preview.png" width="622" height="440" class="img-lazy" />
+    </div>
+  </section>
+  <section class="work__content">
+    <div class="wrap-1 sf-1 work_header">
+      <h2 class="vis-hide">Information</h2>
+      <div class="work__info col-12">
+        <span class="work__info-label">My Roles</span>
+        <span class="work__info-value">Development, Research</span>
       </div>
+      <div class="work__info col-4">
+        <span class="work__info-label">Company</span>
+        <span class="work__info-value">School</span>
+      </div>
+      <div class="work__info col-8">
+        <span class="work__info-label">Time Period</span>
+        <span class="work__info-value">March 2017</span>
+      </div>
+    </div>
+    <div class="wrap-1 sf-1">
+
+    </div>
+  </section>
+</div>
+<div class="page-cover page-cover__visier fullpage-fade-out">
+
+</div>
   {% include "partials/footer.njk" %}
 {% endblock %}
