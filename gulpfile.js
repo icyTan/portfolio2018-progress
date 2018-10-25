@@ -7,6 +7,7 @@ var uglify = require('gulp-uglify');
 var data = require('gulp-data');
 var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
+var changed = require('gulp-changed');
 var nunjucks = require('nunjucks');
 var nunjucksRender = require('gulp-nunjucks-render');
 var browsersync = require('browser-sync').create(); // Creates a browser-sync instance
@@ -111,12 +112,15 @@ gulp.task('nunjucks',function(){
     .pipe(gulp.dest(paths.tmpHTML))
 });
 
-gulp.task('copy-images',function(){
+// https://gulpjs.org/recipes/only-pass-through-changed-files.html
+// uses compare copy so it can run in watch so it doesn't constantly copy all new files
+gulp.task('compare-copy-images',function(){
   return gulp.src(paths.srcIMG,{
     base: 'app/src/' // https://opnsrce.github.io/how-to-make-gulp-copy-a-directory-and-its-contents
     // How to preserve folder structure with gulp dest
-  }).pipe(gulp.dest(paths.tmpDest))
-});
+  }).pipe(changed(paths.tmpDest))
+    .pipe(gulp.dest(paths.tmpDest))
+})
 
 // gulp watch task for rendering nunjucks pages
 gulp.task('watch-html', ['browser-sync'], function(){
@@ -136,6 +140,7 @@ gulp.task('watch', ['browser-sync'], function() {
   gulp.watch(paths.srcSCSS, ['scss']);
   gulp.watch(paths.srcJS,['js']);
   gulp.watch(paths.srcHTML,['nunjucks']);
+  gulp.watch(paths.srcIMG,['compare-copy-images']);
   gulp.watch(paths.tmp,['refresh']); // hacked method for sequential task run
 });
 
