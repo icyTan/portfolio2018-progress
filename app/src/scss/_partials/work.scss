@@ -33,6 +33,47 @@
   font-size: 1.375rem;
 }
 
+/*work pages*/
+.work-title{
+	margin-top:1.5rem;
+	text-align: center;
+}
+
+.work-caption{
+  text-align: center;
+  font-size:1rem;
+  font-weight:300;
+}
+
+.work-figure{
+	padding-left: 1.5rem;
+	padding-right:1.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	text-align: center;
+	margin-bottom: 1.5rem;
+}
+
+.work-figure-full{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background-color: $off-white;
+}
+
+.work-img{
+	max-width: 100%;
+	width: auto;
+}
+
+.work-summary{
+	color: #10358F;
+}
+
 /* specific hero pages */
 .work__hero--portfolio{
   background-color: $portfolio-color;
@@ -48,6 +89,14 @@
 }
 .work__hero--twitch{
   background-color: $twitch-color;
+  color: #FFF;
+}
+
+.title-visier{
+  color: #FFF;
+}
+
+.subtitle-visier{
   color: #FFF;
 }
 
