@@ -5,14 +5,13 @@
 
 {% block content %}
 {% import "partials/header.njk" as header %}
-{{ header.header('header-bar_portfolio', navItems) }}
+{{ header.header('header-bar_portfolio','Work', navItems) }}
 <div class="wrap-1-content">
   <section class="work__hero work__hero--portfolio hero-1 ">
     <div class="wrap-1 sf-1">
       <h1 class="work__title">Portfolio Redesign + Development</h1>
       <p class="work__subtitle">Learning Gulp, nunjucks, and SCSS</p>
-      <img class="display-mb" />
-      <img class="display-lg" src="/images/portfolio/preview.png" width="622" height="440" class="img-lazy" />
+      <img class="img-responsive" src="/images/portfolio/preview.png" width="622" height="440" class="img-lazy" />
     </div>
   </section>
   <section class="work__content">

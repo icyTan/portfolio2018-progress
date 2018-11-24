@@ -17,6 +17,17 @@ html{
 	height: 100%;
 }
 
+body{
+	height: 100%;
+  background-color: $grey;
+  font-family: 'Lato',Arial,sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+	overflow-x: hidden;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
     display: block;
 }
@@ -70,17 +81,6 @@ h3{
 	font-size: 1.6875rem;
 	line-height: 1;
 	color: $primary-color;
-}
-
-body{
-	height: 100%;
-  background-color: $grey;
-  font-family: 'Lato',Arial,sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1;
-  -webkit-tap-highlight-color: transparent;
-	overflow-x: hidden;
 }
 /* hidden elements */
 .vis-hide{
@@ -157,8 +157,9 @@ body{
 	z-index: 3;
 }
 
-.img{
-
+.img-responsive{
+	max-width: 100%;
+	height: auto;
 }
 
 .img-lazy{
