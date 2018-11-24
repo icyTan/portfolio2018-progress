@@ -74,6 +74,14 @@
 	color: #10358F;
 }
 
+/* figure classes for moblie and desktop displays */
+.display-lg{
+  display:none;
+}
+.display-mb{
+  display:block;
+}
+
 /* specific hero pages */
 .work__hero--portfolio{
   background-color: $portfolio-color;
