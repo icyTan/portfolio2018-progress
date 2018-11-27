@@ -65,3 +65,28 @@ for(let i = 0; i < overlaySelection.length; i++) {
 		},600); // delay go to link by 2 secs
   })
 }
+
+// this is for adding animations to the header bar
+// *******
+// var headerLogo = document.getElementsByClassName("header-bar_logo");
+// headerLogo[0].addEventListener("click", function(event) {
+// 	event.preventDefault();
+// 	document.getElementsByClassName('page-cover')[0].classList.remove('cover-lift');
+// 	document.getElementsByClassName('page-cover')[0].classList.add('cover-drop');
+// 	setTimeout(function(){
+// 		document.location.href=headerLogo[0].getAttribute('href');
+// 	},600); // delay go to link by 2 secs
+// })
+//
+// var headerSelection = document.getElementsByClassName("header-bar_nav-item");
+// for(let i = 0; i < headerSelection.length; i++) {
+//   headerSelection[i].addEventListener("click", function(event) {
+// 		event.preventDefault();
+//     console.log("Clicked index: " + i);
+// 		document.getElementsByClassName('page-cover')[0].classList.remove('cover-lift');
+// 		document.getElementsByClassName('page-cover')[0].classList.add('cover-drop');
+// 		setTimeout(function(){
+// 			document.location.href=headerSelection[i].getAttribute('href');
+// 		},600); // delay go to link by 2 secs
+//   })
+// }

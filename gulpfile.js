@@ -59,7 +59,8 @@ var paths = {
 gulp.task('browser-sync', function() {
   browsersync.init({
     server: "app/tmp",
-    port: 5000
+    port: 5000,
+    open: false
   });
 });
 
@@ -77,7 +78,7 @@ gulp.task('scss', function() {
       cascade: false
     }))
     .pipe(sourcemaps.write('./')) // write sourcemaps
-    .pipe(gulp.dest(paths.tmpCSS)); // set destination
+    .pipe(gulp.dest(paths.tmpCSS)) // set destination
 });
 
 gulp.task('css',function(){
@@ -127,6 +128,25 @@ gulp.task('watch-html', ['browser-sync'], function(){
   gulp.watch(paths.srcHTML,['render', 'refresh']);
 });
 
+//***************************************************************
+// watch tasks for correct reload times
+gulp.task('scss-watch',['scss'], function(done){
+  browsersync.reload();
+  done();
+});
+gulp.task('js-watch',['js'], function(done){
+  browsersync.reload();
+  done();
+});
+gulp.task('nunjucks-watch',['nunjucks'], function(done){
+  browsersync.reload();
+  done();
+});
+gulp.task('img-watch',['compare-copy-images'], function(done){
+  browsersync.reload();
+  done();
+});
+
 // https://www.browsersync.io/docs/api <--- dont be dumb and follow the new 2.0.0+ API
 // format your gulp watches but then calling on a change to the instance of browsersync PLEASE
 
@@ -137,11 +157,11 @@ gulp.task('watch-html', ['browser-sync'], function(){
 // if changes in scss/js/njk then process sepcific filetype scss/js/njk then refresh
 
 gulp.task('watch', ['browser-sync'], function() {
-  gulp.watch(paths.srcSCSS, ['scss']);
-  gulp.watch(paths.srcJS,['js']);
-  gulp.watch(paths.srcHTML,['nunjucks']);
-  gulp.watch(paths.srcIMG,['compare-copy-images']);
-  gulp.watch(paths.tmp,['refresh']); // hacked method for sequential task run
+  gulp.watch(paths.srcSCSS, ['scss-watch']);
+  gulp.watch(paths.srcJS,['js-watch']);
+  gulp.watch(paths.srcHTML,['nunjucks-watch']);
+  gulp.watch(paths.srcIMG,['img-watch']);
+  // gulp.watch(paths.tmp,['refresh']); // hacked method for sequential task run
 });
 
 
