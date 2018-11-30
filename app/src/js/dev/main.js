@@ -104,6 +104,7 @@ for(let i = 0; i < overlaySelection.length; i++) {
 				scale = scale*3;
 			}
 			document.getElementsByClassName('work-list__orb')[i].style.transform = "scale("+ scale +")"; // because we're scaling a circle which is half of the width
+			document.getElementsByClassName('work-list__orb')[i].style.maxWidth = "100%"; // needs to be set to 100% to avoid mousing off of the circle and it changing it's max-width
 			document.getElementsByClassName('work-list__orb')[i].style.zIndex = "3" // set z-index of select item higher than others
 		}
 		setTimeout(function(){
