@@ -116,6 +116,7 @@
     <div class="wrap-1 sf-1">
       <h2>Making lighter animations</h2>
       <p>A particular challenge of the full page transition animation was not using injected javascript elements to animate. All of the animations are done using CSS3 animations and keyframes, and done with the purpose of being more compliant with older browsers. All transitional animations are triggered through javascript class additions or with on load class animations.</p>
+      <p>A note on the way I did my circle expanding transition, the orignal method I used would break on ultra wide monitors. I retooled it to have javascript calculate a scale number that the objects need to scale to in order to get complete coverage.</p>
     </div>
     <figure class="display-lg">
       <div class="work-figure-full clearfix">

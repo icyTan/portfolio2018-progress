@@ -24,13 +24,19 @@
 .work-list__orb{
   display: block;
   flex-shrink: 0;
-  transition: all .3s;
   margin-top: .25rem;
   margin-right: 1.125rem;
   border-radius: 1.75rem; // done so the expandsion will be the same rounded corners
-  width: 3.5rem;
-  height: 3.5rem;
+  width:100%;
+  max-width: 3.5rem;
+  max-height: 3.5rem;
+	transition: transform 0.5s, max-width 0.3s;
   // will-change: all;
+}
+.work-list__orb::after{
+	display: block;
+	padding-bottom: 100%;
+	content: '';
 }
 
 .work-list__meta{
@@ -56,17 +62,6 @@
   font-size: "Lato",Arial, sans-serif;
   font-size: .8125rem;
   font-weight: 600;
-}
-
-
-.work-list__item:not(.-disabled):hover .work-list__orb{
-  width: 100%;
-}
-.work-list__item:not(.-disabled):hover .work-list__name{
-  color:$grey;
-}
-.work-list__item:not(.-disabled):hover .work-list__desc{
-  color:$light-grey;
 }
 
 .-disabled{

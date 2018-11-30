@@ -25,7 +25,13 @@
           <span class="work-list__name">{{ item.work_item }}</span>
           <span class="work-list__desc">{{ item.description }}</span>
         </div>
-        {% if active_page != item.work_item %}<a id="{{ item.work_item | lower }}" href="/{{ item.href | lower | replace(" ", "") }}" class="overlay"></a>{% endif %}
+        <a id="{{ item.work_item | lower }}"
+        {% if active_page != item.work_item %}
+        href="/{{ item.href | lower | replace(" ", "") }}"
+        {% endif %}
+        class="overlay"
+        {% if active_page == item.work_item  %}style="pointer-events:none; cursor:default;"{% endif %}
+        ></a>
       </li>
       {% endfor %}
     </ul>

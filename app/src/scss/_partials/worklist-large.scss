@@ -5,4 +5,13 @@
   .work-list__desc{
     font-size: .875rem;
   }
+  .work-list__item:not(.-disabled):hover .work-list__orb{
+    max-width: 100%;
+  }
+  .work-list__item:not(.-disabled):hover .work-list__name{
+    color:$grey;
+  }
+  .work-list__item:not(.-disabled):hover .work-list__desc{
+    color:$light-grey;
+  }
 }

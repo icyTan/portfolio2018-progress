@@ -137,8 +137,10 @@
 }
 
 .expanding-box {
-	animation: 1s ease-out 0s 1 forwards expandingBoxTransition;
-	overflow: hidden;
+	animation: 0.5s ease-out 0s 1 forwards expandingBoxTransition;
+}
+.fade-image-box {
+	animation: 0.2s ease-out 0s 1 forwards fadeImageBox;
 }
 
 .wipe{
