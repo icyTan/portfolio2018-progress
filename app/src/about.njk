@@ -4,8 +4,8 @@
 {% extends "partials/_layout.njk" %}
 
 {% block content %}
-{% import "partials/header.njk" as header %}
-{{ header.header('header-bar_index','', navItems) }}
+{% import "partials/macros.njk" as macros %}
+{{ macros.header('header-bar_index','', navItems) }}
   <article class="enter-transition-target">
     <header class="about-wrapper sf-1 wrap-1">
       <div class="about-pic-wrapper">
@@ -21,5 +21,6 @@
       <p>something about me LOL</p>
     </div>
   </article>
+  {{ macros.worklist(work_title , worklistItems) }}
   {% include "partials/footer.njk" %}
 {% endblock %}

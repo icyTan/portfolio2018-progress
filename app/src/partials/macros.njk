@@ -1,0 +1,34 @@
+{% macro header(class, page_title, navItems) %}
+<header class="header-bar {{ class }}">
+  <div class="wrap-1 sf-1 header-bar_content ">
+    <a href="/" class="header-bar_logo">Patrik Lau</a>
+    <nav class="header-bar_nav">
+      <ul class="header-bar_nav-list">
+        {% for item in navItems %}
+        <li><a id="{{ item.menu_item | lower }}" href="/{{ item.href | lower | replace(" ", "") }}" class="header-bar_nav-item {% if page_title == item.menu_item %}-active{% endif %}">{{item.menu_item}}</a>
+        </li>{% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+{% endmacro %}
+
+{% macro worklist(active_page, worklistItems) %}
+<section class="work-list">
+  <div class="wrap-1 sf-1">
+    <h2 class="vis-hide">Other Work</h2>
+    <ul class="work-list__list row">
+      {% for item in worklistItems %}
+      <li class="work-list__item col-6 {% if active_page == item.work_item %}-disabled{% endif %}">
+        <div class="work-list__orb {{ item.class }}"></div>
+        <div class="work-list__meta">
+          <span class="work-list__name">{{ item.work_item }}</span>
+          <span class="work-list__desc">{{ item.description }}</span>
+        </div>
+        {% if active_page != item.work_item %}<a id="{{ item.work_item | lower }}" href="/{{ item.href | lower | replace(" ", "") }}" class="overlay"></a>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endmacro %}

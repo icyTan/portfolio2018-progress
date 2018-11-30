@@ -25,5 +25,31 @@
       "menu_item": "Contact",
       "href" : "contact.html"
     }
+  ],
+  "worklistItems": [
+    {
+      "work_item": "Portfolio",
+      "description":"fill these later",
+      "href" : "work/portfolio.html",
+      "class": "landing-work_box-portfolio"
+    },
+    {
+      "work_item": "Twitch",
+      "description":"fill these later",
+      "href" : "work/twitch.html",
+      "class": "landing-work_box-twitch"
+    },
+    {
+      "work_item": "Visier",
+      "description":"fill these later",
+      "href" : "work/visier.html",
+      "class": "landing-work_box-visier"
+    },
+    {
+      "work_item": "YVR",
+      "description":"fill these later",
+      "href" : "work/yvr.html",
+      "class": "landing-work_box-yvr"
+    }
   ]
 }

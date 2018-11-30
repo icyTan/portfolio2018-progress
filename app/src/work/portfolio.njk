@@ -1,11 +1,12 @@
 {% set title = 'Portfolio 2018 Redesign | getpatlau' %}
 {% set description = 'Portfolio for Patrik Lau, UX Designer' %}
 {% set page_title = 'Work' %}
+{% set work_title = 'Portfolio' %}
 {% extends "partials/_layout.njk" %}
+{% import "partials/macros.njk" as macros %}
 
 {% block content %}
-{% import "partials/header.njk" as header %}
-{{ header.header('header-bar_portfolio', page_title , navItems) }}
+{{ macros.header('header-bar_portfolio', page_title , navItems) }}
 <div class="wrap-1-content">
   <section class="work__hero work__hero--portfolio hero-1 ">
     <div class="wrap-1 sf-1">
@@ -137,8 +138,9 @@
     </div>
   </section>
 </div>
-<div class="page-cover page-cover__portfolio cover-lift">
+<div class="page-cover background__portfolio cover-lift">
 
 </div>
+{{ macros.worklist(work_title , worklistItems) }}
   {% include "partials/footer.njk" %}
 {% endblock %}

@@ -107,6 +107,9 @@
 				z-index: 10;
     }
 }
+@keyframes wipe{
+	to {width: 0}
+}
 
 .fade-in {
 	animation: 0.5s ease-out 0s 1 forwards fadeIn;
@@ -136,6 +139,14 @@
 .expanding-box {
 	animation: 1s ease-out 0s 1 forwards expandingBoxTransition;
 	overflow: hidden;
+}
+
+.wipe{
+	animation: 1s linear 0s 1 forwards wipe;
+}
+
+.reverse-wipe{
+	animation: 1s linear 0s 1 reverse wipe;
 }
 
 

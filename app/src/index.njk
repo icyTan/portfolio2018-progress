@@ -3,7 +3,7 @@
 {% extends "partials/_layout.njk" %}
 
 {% block content %}
-  {% import "partials/header.njk" as header %}
+  {% import "partials/macros.njk" as header %}
   {{ header.header('header-bar_index','Work', navItems) }}
   {% include "partials/landing.njk" %}
   {% include "partials/footer.njk" %}
