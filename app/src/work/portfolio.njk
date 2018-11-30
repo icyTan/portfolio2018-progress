@@ -5,7 +5,7 @@
 
 {% block content %}
 {% import "partials/header.njk" as header %}
-{{ header.header('header-bar_portfolio','Work', navItems) }}
+{{ header.header('header-bar_portfolio', page_title , navItems) }}
 <div class="wrap-1-content">
   <section class="work__hero work__hero--portfolio hero-1 ">
     <div class="wrap-1 sf-1">
@@ -27,11 +27,113 @@
       </div>
       <div class="work__info col-8">
         <span class="work__info-label">Time Period</span>
-        <span class="work__info-value">June-September 2018</span>
+        <span class="work__info-value">June-December 2018</span>
       </div>
     </div>
     <div class="wrap-1 sf-1">
-
+      <h2>Necessary Development</h2>
+      <p>In the summer of 2018 I started a slow process of updating my portfolio to use “new” technology that I’ve seen friends use at university and at work. In addition I update the visual style to my portfolio. The major new processes I wanted to learn and try to implement were templates for HTML files using <a href="https://mozilla.github.io/nunjucks/">nunjucks</a> and pre processing CSS files with <a href="https://sass-lang.com/">SCSS</a>. During my search for pre-processing tools, I also implemented an automated workflow with <a href="https://gulpjs.com/">gulp.js</a> that handles preprocessing, browser refreshing, and building packages for deployment.</p>
+      <p>By the end of this redevelopment I wanted to implement:
+        <ol>
+          <li>New styling for my portfolio that reflects the current me.</li>
+          <li>Some level of automation in my workflow.</li>
+          <li>One major animation for the landing page.</li>
+        </ol>
+      </p>
+    </div>
+    <figure class="display-lg">
+      <div class="work-figure-full clearfix">
+        <div>
+          <img src="/images/twitch/twitch_entry.png" alt="twitch splash" style="max-height:36rem;"/>
+        </div>
+      </div>
+    </figure>
+    <figure class="display-mb">
+      <div class="col-12">
+        <p class="work-caption work-summary sf-1">
+          poop.
+        </p>
+      </div>
+    </figure>
+    <div class="wrap-1 sf-1">
+      <h2>Style Changes</h2>
+      <p>For style changes to the portfolio, I created a new colour scheme in addition to adding animations for emphasis. On the front page I made a seamless full page transition in a playful way, with the screen changing to the colour of where a user is going and loading the page with the same colours. Smaller animations are through with hovers and the semi sticky header bar.</p>
+    </div>
+    <figure class="display-lg">
+      <div class="work-figure-full clearfix">
+        <div>
+          <img src="/images/twitch/twitch_entry.png" alt="twitch splash" style="max-height:36rem;"/>
+        </div>
+      </div>
+    </figure>
+    <figure class="display-mb">
+      <div class="col-12">
+        <p class="work-caption work-summary sf-1">
+          poop.
+        </p>
+      </div>
+    </figure>
+    <div class="wrap-1 sf-1">
+      <h2>Automatic workflow</h2>
+      <p>I picked up gulp.js to learn better practices for web development, as well as automate my own development. I learn to separate builds from source files, to run a local webserver using copied temporary files, and make clean and minified deployment builds. Gulp allowed me to have a clean workflow with less manual steps.</p>
+    </div>
+    <figure class="display-lg">
+      <div class="work-figure-full clearfix">
+        <div>
+          <img src="/images/twitch/twitch_entry.png" alt="twitch splash" style="max-height:36rem;"/>
+        </div>
+      </div>
+    </figure>
+    <figure class="display-mb">
+      <div class="col-12">
+        <p class="work-caption work-summary sf-1">
+          poop.
+        </p>
+      </div>
+    </figure>
+    <div class="wrap-1 sf-1">
+      <h2>Making resuable parts</h2>
+      <p>Another change I wanted to do for the new portfolio is use templates with more programmatic methods of managing my code. The solution in this case was using a templating engine alongside SCSS to supply the means to have variables and functions in HTML and CSS. Nunjucks allows for variables to be passed through templates with macros, which I used to make functions I could import into any template. This is seen in the header macro.</p>
+    </div>
+    <figure class="display-lg">
+      <div class="work-figure-full clearfix">
+        <div>
+          <img src="/images/twitch/twitch_entry.png" alt="twitch splash" style="max-height:36rem;"/>
+        </div>
+        <p class="work-caption work-summary">
+          This code snippet is the header, which is a macro that takes inputs to set which item is active and if to add any classes to the header. I use classes to apply what background colour the header should have and a static page title to set which header item is active.
+        </p>
+      </div>
+    </figure>
+    <figure class="display-mb">
+      <div class="col-12">
+        <p class="work-caption work-summary sf-1">
+          poop.
+        </p>
+      </div>
+    </figure>
+    <div class="wrap-1 sf-1">
+      <h2>Making lighter animations</h2>
+      <p>A particular challenge of the full page transition animation was not using injected javascript elements to animate. All of the animations are done using CSS3 animations and keyframes, and done with the purpose of being more compliant with older browsers. All transitional animations are triggered through javascript class additions or with on load class animations.</p>
+    </div>
+    <figure class="display-lg">
+      <div class="work-figure-full clearfix">
+        <div>
+          <img src="/images/twitch/twitch_entry.png" alt="twitch splash" style="max-height:36rem;"/>
+        </div>
+      </div>
+    </figure>
+    <figure class="display-mb">
+      <div class="col-12">
+        <p class="work-caption work-summary sf-1">
+          poop.
+        </p>
+      </div>
+    </figure>
+    <div class="wrap-1 sf-1">
+      <p>On load animations can be done with keyframes and a DOM element that sits ontop of other elements and then hides itself by changing attributes by the end of it’s keyframes.</p>
+      <p>From rebuilding my portfolio I learned more about web development processes, and how to automate some of my own processes. I picked up knowledge about animations along the way, with some tricks to have less javacsript intensive animations. In remaking my portfolio I became more confident in my ability to seek out and apply knowledge as it came to me.</p>
+      <p>You can see the progress on <a href="https://github.com/icyTan/portfolio2018-progress">github</a>.</p>
     </div>
   </section>
 </div>
