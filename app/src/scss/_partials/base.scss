@@ -91,6 +91,11 @@ h3{
 	color: $primary-color;
 }
 
+.display-text{
+	line-height: 1.4;
+	font-size: 1.4rem;
+}
+
 ol>li{
 	margin-left: 1.5rem;
 	padding-left: 0.5rem;
@@ -117,14 +122,16 @@ ol>li{
 	z-index: 1;
 }
 
+/* Fixed widths */
+// 900
 .sf-1{
 	max-width: 48rem;
 }
-
+// +1000
 .sf-2{
 	max-width: 63rem;
 }
-
+// 800
 .sf-3{
 	max-width: 40rem;
 }
@@ -135,6 +142,17 @@ ol>li{
 	margin-left: auto;
 	padding-left: 1rem;
 	padding-right: 1rem;
+}
+
+/* hero across pages*/
+.hero-1{
+  padding-top: 8rem;
+}
+
+/* static section padding */
+.section-1{
+	padding-top: 3rem;
+	padding-bottom: 3rem;
 }
 
 .wrap-1-content{

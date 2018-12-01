@@ -5,22 +5,24 @@
 
 {% block content %}
 {% import "partials/macros.njk" as macros %}
-{{ macros.header('header-bar_index','', navItems) }}
-  <article class="enter-transition-target">
-    <header class="about-wrapper sf-1 wrap-1">
-      <div class="about-pic-wrapper">
-        <div class="about-pic"></div>
-      </div>
-      <div class="about-header">
-        <h1 class="about-header-title">I'm Patrik!<br>Nice to meet you!</h1>
-        <p class="about-header-subtitle">I do interaction design and am learning front-end development work.</p>
-        <p class="resume-btn"><a href="/docs/ResumeSummer2018.pdf" class="btn">View Resume</a></p>
-      </div>
-    </header>
-    <div class="about-content sf-1 wrap-1">
-      <p>something about me LOL</p>
+{{ macros.header('header-bar_about','About', navItems) }}
+<div class="wrap-1-content fullpage-fade-in">
+  <section class="about__intro section-1">
+    <div class="wrap-1 sf-3">
+      <h2 class="vis-hide">About Intro</h2>
+      <img class="about__profile-img img-lazy" src="/images/about/profile.png" />
+      <p class="about__title center-text">Hi there! I'm Patrik.</p>
+      <p>I recently graduated from <a href="http://www.sfu.ca/siat.html">SIAT</a> in June 2018. I've taken some time off and experimented with <a href="https://www.twitch.tv/icytan">streaming</a> and web development until now.</p>
+      <p>For the future I'm interested in diving into interacton design in front end web applications! In the past I did an intership doing visual design at <a href="www.visier.com">Visier</a>, a short stay at <a href="https://www.koolhausgames.com/">Koolhaus Games</a> working on a potential wayfinding application, and freelance work for local clients in graphic design with Adobe tools.</p>
+      <p class="center-text">
+        <a href="/images/resume.pdf" class="btn btn__primary">View Resume</a>
+      </p>
     </div>
-  </article>
-  {{ macros.worklist(work_title , worklistItems) }}
+  </section>
+  <section class="section-1">
+    {{ macros.worklist(work_title , worklistItems) }}
+  </section>
+</div>
   {% include "partials/footer.njk" %}
+<div class="page-cover cover-lift"></div>
 {% endblock %}

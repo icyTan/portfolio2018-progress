@@ -1,0 +1,17 @@
+@media only screen and (min-width: 600px){
+  .about__intro{
+    padding-top:8.5rem !important; // this is very hacky
+  }
+  .about__profile-img{
+    margin-bottom: 1.9rem;
+    max-width: 16.25rem;
+  }
+  .about__title{
+    line-height: 1.4;
+    font-size: 1.4rem;
+  }
+  .btn{
+    padding:1.125rem 2rem;
+    font-size: 1.125rem;
+  }
+}
