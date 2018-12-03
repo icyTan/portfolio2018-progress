@@ -98,12 +98,12 @@ for(let i = 0; i < overlaySelection.length; i++) {
 			var scale = 0;
 			if(landscapeMode){
 				scale = scaleToWindowWidth(document.getElementsByClassName('work-list__orb')[i].offsetWidth);
-				scale= scale*2; // this is to reduce the amount it draws as a normal scale overdraws atm
+				scale= scale*1.75; // this is to reduce the amount it draws as a normal scale overdraws atm
 			} else {
 				scale = scaleToWindowHeight(document.getElementsByClassName('work-list__orb')[i].offsetHeight);
-				scale = scale*3;
+				scale = scale*1;
 			}
-			document.getElementsByClassName('work-list__orb')[i].style.transform = "scale("+ scale +")"; // because we're scaling a circle which is half of the width
+			document.getElementsByClassName('work-list__orb')[i].style.transform = "scale("+ scale +"," + scale*4 + ")"; // because we're scaling a circle which is half of the width
 			document.getElementsByClassName('work-list__orb')[i].style.maxWidth = "100%"; // needs to be set to 100% to avoid mousing off of the circle and it changing it's max-width
 			document.getElementsByClassName('work-list__orb')[i].style.zIndex = "3" // set z-index of select item higher than others
 		}
@@ -162,4 +162,12 @@ function scaleToWindowHeight(inputElementSize){
 	console.log(inputElementSize);
 	console.log(window.innerHeight / inputElementSize);
 	return window.innerHeight / inputElementSize;
+}
+
+// **************
+// Compares element to screen position and returns a scale value to have element scale enough to cover screen.
+// http://javascript.info/coordinates
+function scaleFromBoundingRect(inpRect){
+	// Check if top or bottom is farther away
+	var topDifference = inpRect.top - window.innerHeight;
 }
