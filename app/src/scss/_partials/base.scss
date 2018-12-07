@@ -211,3 +211,12 @@ ol>li{
 .dummy {
 	display: none;
 }
+
+//https://stackoverflow.com/questions/12278587/webkit-text-flickers-when-using-css-transform-scale
+// add for no-flickr on mobile elements
+.no-flickr{
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility:    hidden;
+	-ms-backface-visibility:     hidden;
+	backface-visibility: 				 hidden;
+}

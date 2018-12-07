@@ -20,7 +20,7 @@
     <ul class="work-list__list row">
       {% for item in worklistItems %}
       <li class="work-list__item col-6 {% if active_page == item.work_item %}-disabled{% endif %}">
-        <div class="work-list__orb {{ item.class }}"></div>
+        <div class="work-list__orb {{ item.class }} no-flickr"></div>
         <div class="work-list__meta">
           <span class="work-list__name">{{ item.work_item }}</span>
           <span class="work-list__desc">{{ item.description }}</span>

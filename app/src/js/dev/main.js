@@ -53,7 +53,7 @@ setInterval( function(){
 // https://stackoverflow.com/questions/12551920/capturing-all-the-a-click-event
 document.body.onclick = function(e){
 	e = e || event;
-	console.log(e);
+	// console.log(e);
 	var from = findLinkableParent('a',e.target || e.srcElement);
 	var isOverlay = (getClassOfLink('a',e.target || e.srcElement) === 'overlay') ? true:false;
 	if (isOverlay){
@@ -78,33 +78,33 @@ var overlaySelection = document.getElementsByClassName("overlay");
 for(let i = 0; i < overlaySelection.length; i++) {
   overlaySelection[i].addEventListener("click", function(event) {
 		event.preventDefault();
-		var landscapeMode = (window.innerWidth > window.innerHeight) ? true:false;
+		// var landscapeMode = (window.innerWidth > window.innerHeight) ? true:false;
 		var onLanding = (document.title === 'Patrik Lau') ? true:false;
+		var xScale = 0;
+		var yScale = 0;
 		// check if on landing page, only landing page has landing-work
 		// every other page has work-list
 		if (onLanding){
-			var scale = 0;
-			if(landscapeMode){
-				scale = scaleToWindowWidth(document.getElementsByClassName('landing-work_box')[i].offsetWidth);
-				scale= scale*1.5; // this is to reduce the amount it draws as a normal scale overdraws atm
+			xScale = scaleElementToWindowWidth(document.getElementsByClassName('landing-work_box')[i]);
+			yScale = scaleElementToWindowHeight(document.getElementsByClassName('landing-work_box')[i]);
+			// use larger of the two scales
+			// this basically checks for landscape or portrait mode
+			if (xScale < yScale){
+				document.getElementsByClassName('landing-work_box')[i].style.transform = "scale("+ yScale + ")";
 			} else {
-				scale = scaleToWindowHeight(document.getElementsByClassName('landing-work_box')[i].offsetHeight);
-				scale = scale*3;
+				document.getElementsByClassName('landing-work_box')[i].style.transform = "scale("+ xScale + ")";
 			}
-			document.getElementsByClassName('landing-work_box')[i].style.transform = "scale("+ scale +")"; // because we're scaling a circle which is half of the width
 			document.getElementsByClassName('landing-work_preview-img')[i].classList.add('fade-out'); // select box of same position on page and add the image fade
 			document.getElementsByClassName('landing-work_item')[i].style.zIndex = "3" // set z-index of select item higher than others
 		} else {
-			var scale = 0;
-			if(landscapeMode){
-				scale = scaleToWindowWidth(document.getElementsByClassName('work-list__orb')[i].offsetWidth);
-				scale= scale*1.75; // this is to reduce the amount it draws as a normal scale overdraws atm
+			xScale = scaleElementToWindowWidth(document.getElementsByClassName('work-list__orb')[i]);
+			yScale = scaleElementToWindowHeight(document.getElementsByClassName('work-list__orb')[i]);
+			if (xScale < yScale){
+				document.getElementsByClassName('work-list__orb')[i].style.transform = "scale("+ yScale + ")";
 			} else {
-				scale = scaleToWindowHeight(document.getElementsByClassName('work-list__orb')[i].offsetHeight);
-				scale = scale*1;
+				document.getElementsByClassName('work-list__orb')[i].style.transform = "scale("+ xScale + ")";
 			}
-			document.getElementsByClassName('work-list__orb')[i].style.transform = "scale("+ scale +"," + scale*4 + ")"; // because we're scaling a circle which is half of the width
-			document.getElementsByClassName('work-list__orb')[i].style.maxWidth = "100%"; // needs to be set to 100% to avoid mousing off of the circle and it changing it's max-width
+			// document.getElementsByClassName('work-list__orb')[i].style.maxWidth = "100%"; // needs to be set to 100% to avoid mousing off of the circle and it changing it's max-width
 			document.getElementsByClassName('work-list__orb')[i].style.zIndex = "3" // set z-index of select item higher than others
 		}
 		setTimeout(function(){
@@ -140,34 +140,50 @@ function getClassOfLink(tagname,el){
 function getWidthOfElementByClass(classname,el){
 	while(el){
 		if((el.classList.includes(classname))){
-			return el.offsetWidth;
+			return (el.offsetWidth/2);
 		}
 	}
 	return null;
 }
 
-// scale = w / target.computedWidth;
-// this is what we need to find the scale an object need to be set to in order to fill the whole screen
-function scaleToWindowWidth(inputElementSize){
-	console.log(window.innerWidth);
-	console.log(inputElementSize);
-	console.log(window.innerWidth / inputElementSize);
-	return window.innerWidth / inputElementSize;
+// **************
+// Compares element to screen position and returns a scale value to have element scale enough to cover screen.
+// Add 1 to account for the scale it starts at for most elements.
+// http://javascript.info/coordinates
+function scaleElementToWindowHeight(el){
+	// Check if top or bottom is farther away
+	var elRect = el.getBoundingClientRect();
+	var topDistance = elRect.top*1.75;
+	var bottomDistance = (window.innerHeight - elRect.bottom)*1.75;
+	if (topDistance < bottomDistance){ 	// closer to top
+		console.log("closer to top");
+		console.log(bottomDistance +" / "+ (el.offsetHeight/2) +" = " );
+		console.log(topDistance / (el.offsetHeight/2));
+		return ((bottomDistance / el.offsetHeight)+1);
+	} else { 														// closer to bottom.
+		console.log("closer to bottom");
+		console.log(topDistance +" / "+ (el.offsetHeight/2) +" = " );
+		console.log(topDistance / (el.offsetHeight/2));
+		return (topDistance / (el.offsetHeight/2)+1);
+	}
 }
-
-// scale = h / target.computedHeight;
-// this is what we need to find the scale an object need to be set to in order to fill the whole screen
-function scaleToWindowHeight(inputElementSize){
-	console.log(window.innerHeight);
-	console.log(inputElementSize);
-	console.log(window.innerHeight / inputElementSize);
-	return window.innerHeight / inputElementSize;
-}
-
 // **************
 // Compares element to screen position and returns a scale value to have element scale enough to cover screen.
 // http://javascript.info/coordinates
-function scaleFromBoundingRect(inpRect){
+function scaleElementToWindowWidth(el){
 	// Check if top or bottom is farther away
-	var topDifference = inpRect.top - window.innerHeight;
+	var elRect = el.getBoundingClientRect();
+	var leftDistance = elRect.left*1.75;
+	var rightDistance = (window.innerWidth - elRect.right)*1.75;
+	if (leftDistance < rightDistance){ 	// closer to left
+		console.log("closer to left");
+		console.log(rightDistance +" / "+ (el.offsetWidth/2) +" = " );
+		console.log(rightDistance / (el.offsetWidth/2));
+		return (rightDistance / (el.offsetWidth/2)+1);
+	} else { 														// closer to right
+		console.log("closer to right");
+		console.log(leftDistance +" / "+ (el.offsetWidth/2) +" = " );
+		console.log(leftDistance / (el.offsetWidth/2));
+		return (leftDistance / (el.offsetWidth/2)+1);
+	}
 }
