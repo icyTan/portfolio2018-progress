@@ -2,8 +2,8 @@
 
 /*header*/
 .header-bar{
-	transition-duration: 0.25s;
-	transition-property: transform;
+	transition-duration: 1s;
+	transition-property: transform,background-color;
 	position: fixed;
 	background-color: $grey;
 	color: $pink;

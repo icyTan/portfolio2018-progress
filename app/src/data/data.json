@@ -21,9 +21,6 @@
     },{
       "menu_item": "About",
       "href" : "about.html"
-    },{
-      "menu_item": "Contact",
-      "href" : "contact.html"
     }
   ],
   "worklistItems": [
