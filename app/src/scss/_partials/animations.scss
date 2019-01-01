@@ -1,18 +1,3 @@
-/*transition*/
-.enter-transition-target{
-	transition: opacity 0.35s , transform 0.5s;
-  opacity: 0;
-  transform: translateY(-25px);
-}
-.-loaded{
-  opacity: 1;
-  transform: translateY(0);
-}
-.-unloading{
-	opacity: 0;
-	transform: translateY(-25px);
-}
-
 // how do make non JS on load transitions
 // https://stackoverflow.com/questions/6805482/css3-transition-animation-on-load
 /* page fade in */

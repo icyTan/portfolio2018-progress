@@ -1,0 +1,27 @@
+// self contained file for all parts for gallery/slider
+// using https://codepen.io/napssy/pen/doajrP as a guide
+.slider{
+
+}
+
+.slider-nav{
+  display: inline-block;
+}
+
+.slider-nav_item::before{
+  display: block;
+  transition: background-color .125s, border-color .125s;
+  margin: 1rem .3125rem;
+  border-radius: 50%;
+  background-color: #ccc;
+  width: .625rem;
+  height: .625rem;
+  content: '';
+}
+
+@media only screen and (min-width: 600px){
+  .slider-nav_item::before{
+    margin-left: .25rem;
+    margin-right: .25rem;
+  }
+}

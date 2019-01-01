@@ -8,8 +8,11 @@
   }
   .landing-work_item:nth-child(2n) {
     margin-top: 6rem;
-}
+  }
   .landing-work_content{
   	margin-bottom: 2rem;
+  }
+  .landing-work_preview-img {
+    max-width: 20rem;
   }
 }
