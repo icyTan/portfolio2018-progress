@@ -3,9 +3,10 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
+var terser = require('gulp-terser');
 var data = require('gulp-data');
 var watch = require('gulp-watch');
+var del = require('del');
 var sourcemaps = require('gulp-sourcemaps');
 var changed = require('gulp-changed');
 var nunjucks = require('nunjucks');
@@ -30,9 +31,9 @@ var paths = {
 
   dist:       'app/dist',
   distIndex:  'app/dist/index.html',
-  distHTML:   'app/dist/**/*.html',
-  distCSS:    'app/dist/**/*.css',
-  distJS:     'app/dist/**/*.js',
+  distHTML:   'app/dist/',
+  distCSS:    'app/dist/css',
+  distJS:     'app/dist/js',
 
   njkFiles:   ['app/src/*.njk','app/src/work/*.njk'],
   templates:  'app/src/',
@@ -46,7 +47,7 @@ var paths = {
 // dist - processed and minified files
 
 // TODO:
-// uglify js TEST
+// terser js TEST
 // concat all scss
 // eventually pipe a production build
 
@@ -91,13 +92,9 @@ gulp.task('css',function(){
 gulp.task('js', function(){
   return gulp.src(paths.srcJS)
   .pipe(concat('app.min.js'))
-  // .pipe(uglify()) // TAKE THIS OUT AFTER DEBUG
   .pipe(gulp.dest(paths.tmpJS))
 });
 
-gulp.task('refresh', function () {
-  browsersync.reload();
-});
 
 gulp.task('nunjucks',function(){
   return gulp.src(paths.njkFiles,{
@@ -122,6 +119,10 @@ gulp.task('compare-copy-images',function(){
   }).pipe(changed(paths.tmpDest))
     .pipe(gulp.dest(paths.tmpDest))
 })
+
+gulp.task('refresh', function () {
+  browsersync.reload();
+});
 
 // gulp watch task for rendering nunjucks pages
 gulp.task('watch-html', ['browser-sync'], function(){
@@ -164,16 +165,68 @@ gulp.task('watch', ['browser-sync'], function() {
   // gulp.watch(paths.tmp,['refresh']); // hacked method for sequential task run
 });
 
+// refer to base versions of these tasks for notes
+gulp.task('scss-dist', function() {
+  return gulp.src(paths.srcMSCSS)
+    .pipe(sass({
+      errorLogToConsole: true,
+      outputStyle: 'compressed' // output as uglifed
+    })
+    .on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(gulp.dest(paths.distCSS))
+});
+
+gulp.task('css-dist',function(){
+  return gulp.src(paths.srcCSS,{
+    nodir: true
+  })
+  .pipe(gulp.dest(paths.dist))
+});
+
+gulp.task('js-dist', function(){
+  return gulp.src(paths.srcJS)
+  .pipe(concat('app.min.js'))
+  .pipe(gulp.dest(paths.distJS))
+  .pipe(terser())
+  .pipe(gulp.dest(paths.distJS))
+});
 
 
+gulp.task('nunjucks-dist',function(){
+  return gulp.src(paths.njkFiles,{
+    base: 'app/src/'
+  })
+    .pipe(data(function() {
+      return require(paths.jsonFile)
+    }))
+    .pipe(nunjucksRender({
+      path: paths.templates
+    }))
+    .pipe(gulp.dest(paths.distHTML))
+});
+
+gulp.task('compare-copy-images-dist',function(){
+  return gulp.src(paths.srcIMG,{
+    base: 'app/src/'
+  }).pipe(changed(paths.dist))
+    .pipe(gulp.dest(paths.dist))
+});
 
 // copy and set files for temp server
-gulp.task('copy',['nunjucks','scss','css','js']);
+gulp.task('build-temp',['nunjucks','scss','css','js','compare-copy-images']);
 
 // build files and send to dist folder
-gulp.task('build-dist',['refresh']); // TODO
+gulp.task('build',['nunjucks-dist','scss-dist','css-dist','js-dist','compare-copy-images-dist']);
 
-// build files and send to dist folder
-gulp.task('build-test',['refresh']); // TODO
+gulp.task('clean',function(){
+  return del([
+    'app/dist/',
+    'app/tmp/'
+  ])
+});
 
 gulp.task('default', ['watch']);
