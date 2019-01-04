@@ -6,7 +6,7 @@
 {% import "partials/macros.njk" as macros %}
 
 {% block content %}
-{{ macros.header('header-bar_twitch','Work', navItems) }}
+{{ macros.header('header-bar_twitch', page_title, navItems) }}
 <div class="wrap-1-content">
   <section class="work__hero work__hero--twitch hero-1 ">
     <div class="wrap-1 sf-1">
@@ -38,9 +38,8 @@
       <p>With my partner, we <strong>indentified</strong> in that version of Twitch’s mobile app lacked the ability of the desktop site to onboard brand new viewers to the Twitch viewing experience through a set of curated broadcasters. The feature we proposed for the Twitch was to have a Recommended tab that would bring the benefits of the landing page of the desktop site.</p>
     </div>
     <figure class="display-lg">
-      <div class="col-12">
+      <div class="work-figure-full clearfix">
         <img class="img-responsive" src="/images/twitch/twitch_users.png" alt="twitch users" style="max-height:36rem;"/>
-      </div>
         <p class="work-caption work-summary sf-1">
           These are the three users we quickly evalutated for preliminary research.
         </p>
@@ -71,19 +70,15 @@
     </div>
     <figure class="display-lg">
       <div class="work-figure-full clearfix">
-        <div>
-          <img class="img-responsive" src="/images/twitch/twitch_6.png" alt="twitch splash" style="max-height:36rem;"/>
-        </div>
+        <img class="img-responsive" src="/images/twitch/twitch_6.png" alt="twitch splash" style="max-height:36rem;"/>
       </div>
     </figure>
     <figure class="display-mb">
       <div class="work-figure-full clearfix">
-        <div class="col-12">
-            <img class="img-responsive" src="/images/twitch/twitch_reccomend3.png" alt="twitch users" style="max-height:24rem;"/>
-          <p class="work-caption work-summary sf-1">
-            Reccomended and featured broadcasters page.
-          </p>
-        </div>
+        <img class="img-responsive" src="/images/twitch/twitch_reccomend3.png" alt="twitch users" style="max-height:24rem;"/>
+        <p class="work-caption work-summary sf-1">
+          Reccomended and featured broadcasters page.
+        </p>
       </div>
     </figure>
     <div class="wrap-1 sf-1">
@@ -94,15 +89,11 @@
     </div>
     <figure class="display-lg">
       <div class="work-figure-full clearfix">
-        <div class="col-12">
-          <img class="img-responsive" src="/images/twitch/twitch_5.png" alt="twitch splash" style="max-height:36rem;"/>
-        </div>
+        <img class="img-responsive" src="/images/twitch/twitch_5.png" alt="twitch splash" style="max-height:36rem;"/>
         <p class="work-caption work-summary">
           Entry point for the Reccomended feature.
         </p>
-        <div class="col-12">
-          <img class="img-responsive" src="/images/twitch/twitch_6.png" alt="twitch splash" style="max-height:36rem;"/>
-        </div>
+        <img class="img-responsive" src="/images/twitch/twitch_6.png" alt="twitch splash" style="max-height:36rem;"/>
         <p class="work-caption work-summary sf-1">
           Visual design of Reccomended feature's streamer previews. Each streamer preview has a short description taken from their stream page, a view count, a total number of follows, and a total number of views. These are in place to preview the success/viewership of the streamer.
         </p>

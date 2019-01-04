@@ -33,9 +33,12 @@
 }
 
 .work-caption{
+  color: $orange;
   text-align: center;
   font-size:1rem;
   font-weight:300;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .work-figure{
@@ -54,7 +57,6 @@
   align-items: center;
   justify-content: center;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
   background-color: $off-white;
@@ -63,10 +65,6 @@
 .work-img{
 	max-width: 100%;
 	width: auto;
-}
-
-.work-summary{
-	color: #10358F;
 }
 
 /* figure classes for moblie and desktop displays */

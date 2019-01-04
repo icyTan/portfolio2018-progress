@@ -1,4 +1,3 @@
-// from https://www.youtube.com/watch?v=0jmNon-R3II
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
@@ -65,7 +64,7 @@ gulp.task('browser-sync', function() {
   });
 });
 
-// do sass task
+// process scss files and make sourcemaps
 gulp.task('scss', function() {
   return gulp.src(paths.srcMSCSS) // return this : set retrival
     .pipe(sourcemaps.init()) // init sourcemaps
@@ -82,6 +81,7 @@ gulp.task('scss', function() {
     .pipe(gulp.dest(paths.tmpCSS)) // set destination
 });
 
+// copy all remaining css files (for fontawesome)
 gulp.task('css',function(){
   return gulp.src(paths.srcCSS,{
     nodir: true
@@ -89,13 +89,14 @@ gulp.task('css',function(){
   .pipe(gulp.dest(paths.tmpDest)) // hacking the directories instead of properly copying
 });
 
+// concat js files
 gulp.task('js', function(){
   return gulp.src(paths.srcJS)
   .pipe(concat('app.min.js'))
   .pipe(gulp.dest(paths.tmpJS))
 });
 
-
+// process nunjucks files
 gulp.task('nunjucks',function(){
   return gulp.src(paths.njkFiles,{
     base: 'app/src/' // https://opnsrce.github.io/how-to-make-gulp-copy-a-directory-and-its-contents
