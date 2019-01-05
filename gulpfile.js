@@ -229,5 +229,10 @@ gulp.task('clean',function(){
     'app/tmp/'
   ])
 });
+gulp.task('clean-build',function(){
+  return del([
+    'app/dist/'
+  ])
+});
 
 gulp.task('default', ['watch']);
