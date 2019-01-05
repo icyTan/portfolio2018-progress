@@ -15,7 +15,7 @@
       <img class="img-responsive" src="/images/portfolio/portfolio_hero.png" width="622" height="440" class="img-lazy" />
     </div>
   </section>
-  <section class="work__content">
+  <section class="work__content fullpage-fade-in">
     <div class="wrap-1 sf-1 work_header">
       <h2 class="vis-hide">Information</h2>
       <div class="work__info col-12">
@@ -52,7 +52,7 @@
     </figure>
     <figure class="display-mb">
       <div class="work-figure-full clearfix">
-        <img class="img-responsive" src="/images/portfolio/portfolio2.png" alt="twitch users" style="max-height:24rem;margin-bottom:1rem;"/>
+        <img class="img-responsive" src="/images/portfolio/portfolio2.png" alt="twitch users" style="max-height:30rem;margin-bottom:1rem;"/>
         <p class="work-caption work-summary sf-1">
           New style changes, with some notes on usage.
         </p>
@@ -94,7 +94,7 @@
     </figure>
     <figure class="display-mb">
       <div class="work-figure-full clearfix">
-        <img class="img-responsive" src="/images/portfolio/portfolio5m.png" alt="twitch users" style="max-height:24rem;margin-bottom:1rem;"/>
+        <img class="img-responsive" src="/images/portfolio/portfolio5m.png" alt="twitch users" style="max-height:30rem;margin-bottom:1rem;"/>
         <p class="work-caption work-summary sf-1">
           With nunjucks I can use macros similar to functions in traditional programming to inject code snippets that are customized to an extent.
         </p>
@@ -102,42 +102,48 @@
     </figure>
     <div class="wrap-1 sf-1">
       <h2>Making resuable parts</h2>
-      <p>Another change I wanted to do for the new portfolio is use templates with more programmatic methods of managing my code. The solution in this case was using a templating engine alongside SCSS to supply the means to have variables and functions in HTML and CSS. Nunjucks allows for variables to be passed through templates with macros, which I could import into any template use similar to traditional functions. This solution is seen through various macros and mixins in nunjucks and SCSS respectively.</p>
+      <p>Another change I wanted to do for the new portfolio is use templates with more programmatic methods of managing my code. The solution in this case was using a templating engine alongside SCSS to supply the means to have variables and functions in HTML and CSS. </p>
+      <p>Nunjucks allows for variables to be passed through templates with macros, which I could import into any template use similar to traditional functions. This solution is seen through various macros and mixins in nunjucks and SCSS respectively.</p>
     </div>
-    <figure class="display-lg">
+    <figure>
       <div class="work-figure-full clearfix">
-        <div>
-          <img src="/images/twitch/twitch_entry.png" alt="twitch splash" style="max-height:36rem;"/>
+        <div class="work-video_wrap" style="max-width:720px;">
+          <video class="work-video" controls="controls">
+            <source src="/images/portfolio/mainanimation.mp4" />
+            <p><a href="/images/portfolio/mainanimation.mp4">Download this video file.</a></p>
+          </video>
         </div>
-        <p class="work-caption work-summary">
-          This code snippet is the header, which is a macro that takes inputs to set which item is active and if to add any classes to the header. I use classes to apply what background colour the header should have and a static page title to set which header item is active.
-        </p>
-      </div>
-    </figure>
-    <figure class="display-mb">
-      <div class="col-12">
         <p class="work-caption work-summary sf-1">
-          poop.
+          Main animation walkthrough.
         </p>
       </div>
     </figure>
     <div class="wrap-1 sf-1">
-      <h2>Making lighter animations</h2>
-      <p>A particular challenge of the full page transition animation was not using injected javascript elements to animate. All of the animations are done using CSS3 animations and keyframes, and done with the purpose of being more compliant with older browsers. All transitional animations are triggered through javascript class additions or with on load class animations.</p>
+      <h2>Making lightweight animations</h2>
+      <p>A particular challenge of the full page transition animation was not using injected javascript DOM elements to animate as my transitions. All of the animations are visually performed using CSS3 animations and keyframes, and done with the purpose of being more compliant with older browsers. </p>
+      <p>All transitional animations are triggered through javascript class additions or with on load class animations, this has the benefit of breaking only transitional animations with no javascript.</p>
       <p>A note on the way I did my circle expanding transition, the orignal method I used would break on ultra wide monitors. I retooled it to have javascript calculate a scale number that the objects need to scale to in order to get complete coverage.</p>
     </div>
-    <figure class="display-lg">
+    <figure>
       <div class="work-figure-full clearfix">
-        <div>
-          <img src="/images/twitch/twitch_entry.png" alt="twitch splash" style="max-height:36rem;"/>
+        <div class="background__portfolio fullpage-fade-in-out-repeating">
+          <section class="work__hero work__hero--portfolio">
+            <div class="wrap-1 sf-1 header-bar_content header-bar_portfolio" style="margin-bottom:4rem;">
+              <a href="/" class="header-bar_logo not-active">Patrik Lau</a>
+              <nav class="header-bar_nav">
+                <ul class="header-bar_nav-list">
+                  <li><a href="/" class="header-bar_nav-item -active  not-active">Work</a>
+                  <li><a href="/" class="header-bar_nav-item  not-active">About</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="wrap-1 sf-1">
+              <h1 class="work__title">Demo Animation</h1>
+              <p class="work__subtitle">This is on a loop!</p>
+              <img class="img-responsive" src="/images/portfolio/portfolio_hero.png" class="img-lazy" style="max-height:20rem;"/>
+            </div>
+          </section>
         </div>
-      </div>
-    </figure>
-    <figure class="display-mb">
-      <div class="col-12">
-        <p class="work-caption work-summary sf-1">
-          poop.
-        </p>
       </div>
     </figure>
     <div class="wrap-1 sf-1">

@@ -72,7 +72,7 @@ p>a:hover{
 h1{
 	margin-bottom: 1.5rem;
 	font-weight: 700;
-	font-size: 2.25rem;
+	font-size: 1.6875rem;
 	line-height: 1.25;
 	font-family: 'Varela Round', sans-serif;
 }
@@ -228,4 +228,10 @@ ol>li{
 	-moz-backface-visibility:    hidden;
 	-ms-backface-visibility:     hidden;
 	backface-visibility: 				 hidden;
+}
+
+.not-active{
+	pointer-events: none;
+	cursor: default;
+	text-decoration: none;
 }

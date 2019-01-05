@@ -1,0 +1,23 @@
+// Self contained styling for the animation demo in the portfolio page
+@keyframes fullPageFadeInOut {
+    0% {
+        opacity: 0;
+				transform: translateY(-10px);
+    }
+    25% {
+        opacity: 1;
+				transform: translateY(0px);
+    }
+    90% {
+        opacity: 1;
+				transform: translateY(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+}
+
+.fullpage-fade-in-out-repeating{
+	animation: 4s ease-out 0s infinite fullPageFadeInOut;
+}
