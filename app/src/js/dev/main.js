@@ -153,8 +153,8 @@ function getWidthOfElementByClass(classname,el){
 function scaleElementToWindowHeight(el){
 	// Check if top or bottom is farther away
 	var elRect = el.getBoundingClientRect();
-	var topDistance = elRect.top*1.75;
-	var bottomDistance = (window.innerHeight - elRect.bottom)*1.75;
+	var topDistance = elRect.top*2.5; // safetly over the max of double the screen for when someone taps at the bottom of an element
+	var bottomDistance = (window.innerHeight - elRect.bottom)*2.5;
 	if (topDistance < bottomDistance){ 	// closer to top
 		console.log("closer to top");
 		console.log(bottomDistance +" / "+ (el.offsetHeight/2) +" = " );
@@ -173,8 +173,8 @@ function scaleElementToWindowHeight(el){
 function scaleElementToWindowWidth(el){
 	// Check if top or bottom is farther away
 	var elRect = el.getBoundingClientRect();
-	var leftDistance = elRect.left*1.75;
-	var rightDistance = (window.innerWidth - elRect.right)*1.75;
+	var leftDistance = elRect.left*2;
+	var rightDistance = (window.innerWidth - elRect.right)*2;
 	if (leftDistance < rightDistance){ 	// closer to left
 		console.log("closer to left");
 		console.log(rightDistance +" / "+ (el.offsetWidth/2) +" = " );
